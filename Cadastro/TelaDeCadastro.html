@@ -3,94 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="script.js">
     <title>Cadastro</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e5eaf0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-        }
-
-        h1 {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #00cccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-
-        .btn {
-            background-color: #00cccc;
-            color: white;
-            padding: 10px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn:hover {
-            background-color: #00a3a3;
-        }
-
-    </style>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
     <h1>Cadastro</h1>
-    <label for="role">Entrar como:</label>
-    <select id="role" name="role">
-        <option value="Cuidador">Cuidador</option>
-        <!-- Você pode adicionar mais opções aqui -->
+    <select id="tipoCadastro" onchange="mostrarFormulario()">
+      <option value="">Selecione uma opção</option>
+      <option value="Paciente">Paciente</option>
+      <option value="Cuidador">Cuidador</option>
     </select>
+  </div>
 
-    <input type="text" placeholder="Digite seu nome">
-    <input type="text" placeholder="Digite seu CPF">
-    <input type="date" placeholder="Data de nascimento">
-    <input type="text" placeholder="Digite seu COREN">
-    <input type="email" placeholder="Digite seu Email">
+  <div id="formulario-comum">
+    <input type="text" id="nome" placeholder="Digite seu nome:" />
+    <input type="number" id="cpf" placeholder="Digite seu CPF:" />
+    <input type="date" id="dataNascimento" placeholder="Data de nascimento:" />
+    <input type="email" id="email" placeholder="Digite seu Email:" />
+  </div>
 
-    <button class="btn">Continuar</button>
-</div>
+  <div id="FormularioCuidador" style="display:none;">
+    <input type="text" id="coren" placeholder="Digite seu COREN:" />
+  </div>
+
+  <div id="FormularioPaciente" style="display:none;">
+    <input type="text" id="sus" placeholder="Digite seu Cartão SUS" />
+  </div>
+
+  <button class="btn">Continuar</button>
+
+
 
 </body>
 </html>
