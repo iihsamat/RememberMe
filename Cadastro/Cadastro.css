@@ -8,24 +8,21 @@ h1 {
 
 
 body {
-    background-color: #e5eaf0;
-    height: 100vh;
+    background-color: #eeeeee;
+
 }
 
 .container {
-    align-items: center;
-    justify-content: center;
     margin-top: 100px; ;
-    width: 300px;
     text-align: center;
 }
 
 
-
 input {
-    width: 100%;
+    margin-top:10px;
+    display: flex;
+    width: 300px;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #00cccc;
     border-radius: 5px;
     font-size: 14px;
@@ -41,6 +38,9 @@ select {
 }
 
 .btn {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
     background-color: #00cccc;
     color: white;
     padding: 10px 0;
@@ -48,10 +48,13 @@ select {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
+    width: 300px;
 }
 
 .btn:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #00a3a3;
 }
 
