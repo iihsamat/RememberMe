@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+    background-color: #eeee;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.container {
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.tipo-cadastro {
+    margin-bottom: 20px;
+}
+
+select {
+    margin-bottom: 20px;
+    width: 130px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7fe3e0;
+    font-size: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #7fe3e0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+button {
+    background-color: #50d9da;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2cc9c8;
+}
+

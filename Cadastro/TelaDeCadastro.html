@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastro.css">
-    <script src="Script.js"></script>
+    <script src="telacadastro.js"></script>
     <title>Cadastro</title>
 </head>
 <body>
 
   <div class="container">
     <h1>Cadastro</h1>
-    <select id="tipoCadastro" onchange="mostrarFormulario()">
-      <option value="">Entar como</option>
+    <select id="tipoCadastro" required onchange="mostrarFormulario(); habilitarCampos()">
+      <option value="" disabled selected>Entar como</option>
       <option value="Paciente">Paciente</option>
       <option value="Cuidador">Cuidador</option>
     </select>
   </div>
 
   <div id="formulario-comum">
-    <input type="text" id="nome" placeholder="Digite seu nome:" />
-    <input type="number" id="cpf" placeholder="Digite seu CPF:" />
-    <input type="date" id="dataNascimento" placeholder="Data de nascimento:" />
-    <input type="email" id="email" placeholder="Digite seu Email:" />
+    <center>
+    <input type="text" id="nome" placeholder="Digite seu nome:" disabled required>
+    <input type="number" id="cpf" placeholder="Digite seu CPF:" disabled required>
+    <input type="date" id="dataNascimento" placeholder="Data de nascimento:" disabled required>
+    <input type="email" id="email" placeholder="Digite seu Email:" disabled required>
   </div>
 
+
   <div id="FormularioCuidador" style="display:none;">
+    <center>
     <input type="text" id="coren" placeholder="Digite seu COREN:" />
   </div>
 
   <div id="FormularioPaciente" style="display:none;">
+    <center>
     <input type="text" id="sus" placeholder="Digite seu Cartão SUS" />
   </div>
-
-  <button class="btn">Continuar</button>
+ <center>
+  <button type="button" class="btn" id="concluirBtn" onclick="verificarCadastro()">Continuar</button>
 
 
 
