@@ -32,7 +32,7 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: rgb(39, 39, 39);
-
+    
 
 }
 
@@ -64,4 +64,10 @@ img {
     height: 220px;
     filter: invert(100%);
 
+}
+
+.btn:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
