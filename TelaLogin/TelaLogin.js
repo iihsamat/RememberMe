@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateInputColors(role) {
         inputs.forEach(input => {
             if (role === 'cuidador') {
-                input.style.backgroundColor = '#f5faff';
+                input.style.backgroundColor = '';
                 input.style.borderColor = '#11D6CA';     
             } else if (role === 'paciente') {
-                input.style.backgroundColor = '#f5faff';
+                input.style.backgroundColor = '';
                 input.style.borderColor = '#58AAD9'; 
             }
         });
