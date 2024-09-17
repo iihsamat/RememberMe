@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="Esqueceu.css">
+    <script src="Esqueceu.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="reset-senha-box">
+            <h2>Redefinir Senha</h2>
+            <form id="resetSenhaForm">
+                <label for="email"></label>
+                <input type="text" id="email" name="email" placeholder="Email/Telefone:" required>
+                
+                <button type="button" id="enviarcode">Enviar código</button>
+
+                <label for="confirmarcode"></label>
+                <input type="text" id="confirmarcode" name="confirmarcode" placeholder="Código de confirmação:" required>
+
+                <label for="novaSenha"></label>
+                <div class="password-container">
+                    <input type="password" id="novaSenha" name="novaSenha" placeholder="Digite sua nova senha:" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('novaSenha')">👁</span>
+                </div>
+
+                <label for="confirmarSenha"></label>
+                <div class="password-container">
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirma sua senha:" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirmarSenha')">👁</span>
+                </div>
+
+                <button type="submit">Concluir</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

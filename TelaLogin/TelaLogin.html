@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="TelaLogin.css">
+    <script src="TelaLogin.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Tela de Login</title>
 </head>
 <body>
-    <h1>aaaaaaaaaaaa</h1>
+    <div class="container">
+        <img src="../HomePage/imgs/celebo branco.png" alt="Logo">
+        <h1>REMEMBER ME</h1>
+        <p>Entrar como:</p>
+        <select id="roleSelector">
+            <option value="cuidador">Cuidador</option>
+            <option value="paciente">Paciente</option>
+        </select>
+        <input type="text" id="cpf" placeholder="Digite seu CPF:">
+        <input type="text" id="cpfPaciente" placeholder="CPF do paciente:">
+        <div class="input-container">
+            <input type="password" id="senha" placeholder="Digite sua senha:">
+            <i id="togglePassword" class="fas fa-eye"></i>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="lembrar" name="lembrar">
+            <label for="lembrar">Lembrar-me</label>
+            <a href="../EsqueceuSenha/Esqueceu.html">Esqueceu a senha?</a>
+        </div>
+
+        <button id="entrarButton">Entrar</button>
+
+        <div class="cadastrar">
+            <p>Ainda não possui uma conta? <a href="../Cadastro/TelaDeCadastro.html">Cadastre-se</a></p>
+        </div>
+    </div>
 </body>
 </html>

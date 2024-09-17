@@ -70,4 +70,5 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(39, 39, 39);
 }

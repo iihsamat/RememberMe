@@ -25,12 +25,15 @@ h1 {
 }
 
 select {
+    text-align: center;
+    color: inherit;
     margin-bottom: 20px;
     width: 130px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #7fe3e0;
     font-size: 16px;
+    appearance: none;
 }
 
 form {

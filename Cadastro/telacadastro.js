@@ -59,3 +59,4 @@ function verificarCadastro() {
       window.location.href = "../Cadastro/Cpaciente.html";
 }
 }
+
