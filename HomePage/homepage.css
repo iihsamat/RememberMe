@@ -15,24 +15,17 @@ h1 {
 }
 
 
-.button-login {
-    display: flex;
-    justify-content: center;
+.btn {
     align-items: center;
-    outline: none;
-    border: none;
-}
-
-.btn-primary {
+    height: 40px;
+    width: 200px;
     font-size: 25px;
-    border-radius: 30px;
-    padding: 5px 80px;
+    border-radius: 20px;
     margin-top: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(39, 39, 39);
-    
+    color: white;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
 
 }
 
@@ -53,6 +46,7 @@ a {
     justify-content: center;
     align-items: center ;
     font-size: 20px;
+
 }
 
 body {
@@ -64,11 +58,4 @@ img {
     height: 220px;
     filter: invert(100%);
 
-}
-
-.btn:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(39, 39, 39);
 }

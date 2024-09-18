@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="ContinuacaoPaciente.css">
+    <script src="continuacao.js"></script>
+    <title>Cadastro Cuidador</title>
 </head>
 <body>
-    
-</body>
-</html>
+
+    <div class="container">
+        <form>
+            <input type="text" placeholder="Digite seu telefone:" required>
+            <input type="text" placeholder="Digite seu endereço:" required>
+            <div class="row">
+                <input type="text" placeholder="Número:" required>
+                <input type="text" placeholder="Bairro:" required>
+            </div>
+
+            <input type="text" placeholder="Cidade:" required>
+
+            <div class="row">
+                <input type="text" placeholder="Complemento:" required>
+                <input type="text" placeholder="CEP:" required>
+            </div>
+
+            <div class="eye-icon">
+                <input type="password" placeholder="Digite sua senha:" required>
+                <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" onclick="togglePassword('password1')">
+            </div>
+
+            <div class="eye-icon">
+                <input type="password" placeholder="Confirme sua senha:" required>
+                <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" onclick="togglePassword('password2')">
+            </div>
+            <br>
+            <a href="../TelaLogin/TelaLogin.html" class="btn" role="button">Concluir</a>
+        </form>
+    </div>
+</body>   
