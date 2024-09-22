@@ -36,12 +36,12 @@ h1 {
     color: #58AAD9;
 }
 
-.ad-form ul {
+.oco-form ul {
     list-style: none;
     padding: 0;
 }
 
-.ad-form li {
+.oco-form li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,9 +56,12 @@ input[type="checkbox"] {
 }
 
 select {
+    width: 3850px;
+    height: 50px;
     border: 2px solid #58AAD9;
     border-radius: 5px;
     padding: 5px;
+    font-size: 20px;
 }
 
 .button-row {
@@ -102,4 +105,95 @@ input[type="checkbox"]:checked::after {
     position: absolute;
     left: 4px;
     top: -2px;
+}
+
+.discard-button, .save-button {
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.discard-button {
+    background-color: #DEDEDE;
+    color: red;
+}
+
+.save-button {
+    background-color: #58AAD9;
+    color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.confirm-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.confirm-buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: none
+}
+
+.confirm-yes {
+    color: rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+
+.confirm-no {
+    color: rgb(20, 20, 20);
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.observacoes {
+    background-color: #33333311;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="date"] {
+    width: 380px;
+    height: 50px;
+    border: 2px solid #58AAD9;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    color: #333;
+    position: relative;
 }

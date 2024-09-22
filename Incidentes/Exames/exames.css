@@ -1,134 +1,183 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
-  body {
-    font-family: 'Archivo black', sans-serif;
-    color: #333;
-  }
+body {
+  font-family: 'Archivo black', sans-serif;
+  color: #333;
+}
   
-  .container {
-    padding: 20px;
-    background-color: #ffffff;
-  }
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+}
   
-  header {
-    display: flex;
-    align-items: center;
-  }
+header {
+  display: flex;
+  align-items: center;
+}
   
-  header h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-left: 15%;
-  }
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 15%;
+}
   
-  .back-button {
-    font-size: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-top: -3%;
-    color: #58AAD9;
-  }
+.back-button {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: -3%;
+  color: #58AAD9;
+}
   
-  .exam-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
+.exam-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .input-sla{
-    margin-left: 5%;
-    width: 60%;
-  }
+.input-sla{
+  margin-left: 5%;
+  width: 60%;
+}
 
-  input[type="text"], input[type="date"] {
-    width: 100%;
-    padding: 13px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #F6F6F6;
-  }
+input[type="text"], input[type="date"] {
+  width: 100%;
+  padding: 13px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #F6F6F6;
+  font-size: 16px;
+}
   
-  .input-row {
-    display: flex;
-    width: 100%;
+.input-row {
+  display: flex;
+  width: 100%;
 
-  }
+}
   
-  .file-upload {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #F6F6F6;
-  }
+.file-upload {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #F6F6F6;
+}
   
-  .file-label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
+.file-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
   
-  .file-label img {
-    width: 24px;
-    height: 24px;
-    margin-left: 315px;
-  }
+.file-label img {
+  width: 24px;
+  height: 24px;
+  margin-left: 315px;
+}
   
-  .button-row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .discard-button {
-    background-color: #DEDEDE;
-    font-family: 'Arial', sans-serif;
-    color: red;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 150px;
-    margin-left: 20px;
-  }
-  
-  .save-button {
-    background-color: #58AAD9;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 150px;
-    margin-right: 20px;
-  }
-  
-  .discard-button:hover {
-    background-color: #DEDEDE;
-  }
-  
-  .save-button:hover {
-    background-color: #009fdf;
-  }
 
-  
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 a:visited {
-    color: inherit;
+  color: inherit;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.discard-button, .save-button {
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.discard-button {
+  background-color: #DEDEDE;
+  color: red;
+}
+
+.save-button {
+  background-color: #58AAD9;
+  color: white;
+}
+
+.toggle-button {
+  background-color: white;
+  border: none;
+  text-align: left;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.modal {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.confirm-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirm-buttons button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: none
+}
+
+.confirm-yes {
+  color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+
+.confirm-no {
+  color: rgb(20, 20, 20);
+  background-color: rgba(255, 0, 0, 0.1);
 }
