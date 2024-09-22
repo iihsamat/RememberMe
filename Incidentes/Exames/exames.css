@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Archivo black', sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 15%;
+  }
+  
+  .back-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: -3%;
+    color: #58AAD9;
+  }
+  
+  .exam-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-sla{
+    margin-left: 5%;
+    width: 60%;
+  }
+
+  input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+  }
+  
+  .input-row {
+    display: flex;
+    width: 100%;
+
+  }
+  
+  .file-upload {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #F6F6F6;
+  }
+  
+  .file-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-label img {
+    width: 24px;
+    height: 24px;
+    margin-left: 315px;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .discard-button {
+    background-color: #DEDEDE;
+    font-family: 'Arial', sans-serif;
+    color: red;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-left: 20px;
+  }
+  
+  .save-button {
+    background-color: #58AAD9;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-right: 20px;
+  }
+  
+  .discard-button:hover {
+    background-color: #DEDEDE;
+  }
+  
+  .save-button:hover {
+    background-color: #009fdf;
+  }
+
+  
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}

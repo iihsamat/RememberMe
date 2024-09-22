@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 15%;
+}
+
+.back-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #58AAD9;
+}
+
+.ad-form ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ad-form li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px; 
+}
+
+select {
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.toggle-button {
+    background-color: white;
+    border: none;
+    text-align: left;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #58AAD9;
+    border-radius: 4px;
+    margin-right: 5px;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #58AAD9;
+    border-color: #58AAD9;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 4px;
+    top: -2px;
+}

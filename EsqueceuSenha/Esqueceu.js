@@ -14,7 +14,7 @@ document.getElementById("resetPasswordForm").addEventListener("submit", function
 
     if (newPassword === confirmPassword) {
         alert("Senha redefinida com sucesso!");
-        // Aqui você pode adicionar a lógica de envio de dados ao servidor.
+
     } else {
         alert("As senhas não coincidem.");
     }

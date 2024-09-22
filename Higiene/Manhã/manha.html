@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina Manhã</title>
+    <link rel="stylesheet" href="manha.css">
+    <script src="manha.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../higiene.html">
+                <button class="back-button">&#8592;</button>
+            </a>
+            <h1>ROTINA</h1>
+        </header>
+
+        <form class="hygiene-form">
+            <ul>
+                <li>
+                    <label for="banho">Tomou banho sozinho?</label>
+                    <input type="checkbox" id="banho">
+                </li>
+                <li>
+                    <label for="dentes">Escovou os dentes?</label>
+                    <input type="checkbox" id="dentes">
+                </li>
+
+                <li>
+                    <label for="fezes-toggle">Fezes?</label>
+                    <button type="button" id="fezes-toggle" class="toggle-button">V</button>
+                </li>
+
+                <div id="fezes-section" class="fezes-section">
+                    <ul class="fezes-list">
+                        <li>1 - Pequenos fragmentos duros</li>
+                        <li>2 - Em forma cilíndrica com grumos</li>
+                        <li>3 - Em forma cilíndrica com fissuras</li>
+                        <li>4 - Em forma cilíndrica, fina e suave</li>
+                        <li>5 - Fragmentada com pedaços definidos</li>
+                        <li>6 - Em pedaços esfarrapados</li>
+                        <li>7 - Líquido</li>
+                    </ul>
+
+
+                    <label for="fezes-select">Selecione o tipo</label>
+                    <select id="fezes-select">
+                        <option value="1">Tipo 1</option>
+                        <option value="2">Tipo 2</option>
+                        <option value="3">Tipo 3</option>
+                        <option value="4">Tipo 4</option>
+                        <option value="5">Tipo 5</option>
+                        <option value="6">Tipo 6</option>
+                        <option value="7">Tipo 7</option>
+                    </select>
+
+                    <div class="odor-section">
+                        <div class="section-title">ODOR:</div>
+                        <div class="checkbox-group odor-group">
+                            <label><input type="checkbox"> Normal</label>
+                            <label><input type="checkbox"> Forte</label>
+                            <label><input type="checkbox"> Fátido</label>
+                            <label><input type="checkbox"> Outros</label>
+                        </div>
+                    </div>
+
+                    <div class="coloracao-section">
+                        <div class="section-title">COLORAÇÃO:</div>
+                        <div class="checkbox-group coloracao-group">
+                            <label><input type="checkbox"> Normal</label>
+                            <label><input type="checkbox"> Verde</label>
+                            <label><input type="checkbox"> Amarelo</label>
+                            <label><input type="checkbox"> Preto/Cinza</label>
+                            <label><input type="checkbox"> Vermelho</label>
+                            <label><input type="checkbox"> Outros</label>
+                        </div>
+                    </div>
+                </div>
+
+                <li>
+                    <label for="urina">Urina?</label>
+                    <select id="urina">
+                        <option value="normal">Normal</option>
+                        <option value="alterada">Alterada</option>
+                    </select>
+                </li>
+
+                <li>
+                    <label for="fralda">Utilizou fralda?</label>
+                    <input type="checkbox" id="fralda">
+                </li>
+            </ul>
+
+            <textarea placeholder="Observações..." class="observacoes"></textarea>
+
+            <div class="button-row">
+                <button type="button" class="discard-button">Descartar</button>
+                <button type="button" id="save-button" class="save-button">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <p>Você tem certeza que deseja DESCARTAR as alterações?</p>
+            <div class="confirm-buttons">
+                <button id="confirm-no" class="confirm-no">Cancelar</button>
+                <button id="confirm-yes" class="confirm-yes">Descartar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

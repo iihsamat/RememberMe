@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina Janta</title>
+    <link rel="stylesheet" href="janta.css">
+    <script src="janta.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../alimentacao.html">
+                <button class="back-button">&#8592;</button>
+            </a>
+            <h1>ROTINA</h1>
+        </header>
+
+        <form class="alimen-form">
+            <ul>
+                <li>
+                    <label for="alimentou">Se alimentou hoje?</label>
+                    <input type="checkbox" id="alimentou">
+                </li>
+                <li>
+                    <label for="engasgou">Engasgou ao Alimentar-se?</label>
+                    <input type="checkbox" id="engasgou">
+                </li>
+                <li>
+                    <label for="liquido">Bebeu Liquido?</label>
+                    <input type="checkbox" id="liquido">
+                </li>
+                <li>
+                    <label for="engasgouL">Engasgou com o Liquido?</label>
+                    <input type="checkbox" id="engasgouL">
+                </li>
+                <li>
+                    <label for="acucar">Ingeriu açúcar?</label>
+                    <input type="checkbox" id=acucar>
+                </li>
+            </ul>
+
+            <textarea placeholder="Observações..." class="observacoes"></textarea>
+
+            <div class="button-row">
+                <button type="button" class="discard-button">Descartar</button>
+                <button type="button" id="save-button" class="save-button">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <p>Você tem certeza que deseja DESCARTAR as alterações?</p>
+            <div class="confirm-buttons">
+                <button id="confirm-no" class="confirm-no">Cancelar</button>
+                <button id="confirm-yes" class="confirm-yes">Descartar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

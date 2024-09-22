@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exames</title>
+  <link rel="stylesheet" href="exames.css">
+  <script src="exames.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+       <a href="../incidentes.html">
+          <button class="back-button">&#8592;</a></button>
+       </a>
+      <h1>EXAMES</h1>
+    </header>
+    
+    <form class="exam-form">
+      <input type="text" id="pedido" placeholder="Número pedido">
+      
+      <div class="input-row">
+        <div>
+            <input type="text"  placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+         </div>
+        <div class="input-sla">
+            <input type="text"  placeholder="Data impressão" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
+        </div>
+      </div>
+
+      <input type="text" id="medico" placeholder="Médico solicitante">
+      
+      <input type="text" id="laboratorio" placeholder="Laboratório prestador">
+
+      <div class="file-upload">
+        <label for="arquivo" class="file-label">
+          <img src="icones/anexo.png" alt="Anexar arquivo">
+        </label>
+      </div>
+      
+      <div class="button-row">
+        <button type="button" class="discard-button">Descartar</button>
+        <button type="submit" class="save-button">Salvar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
