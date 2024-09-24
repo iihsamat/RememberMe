@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6EFF4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #00C1CF;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.titulo {
+    font-size: 30px;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.perfil {
+    padding: 20px;
+    text-align: center;
+}
+
+.fotoperfil {
+    position: relative;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.fotoperfil img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.add-photo {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00C1CF;
+    color: white;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.perfil-info {
+    margin-top: 20px;
+}
+
+.perfil-info h3 {
+    margin-bottom: 10px;
+}
+
+.perfil-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.perfil-info a {
+    color: #00C1CF;
+    text-decoration: none;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.editar, .encerrar {
+    background-color: #00C1CF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.editar:hover, .encerrar:hover {
+    background-color: #009DA0; /* Cor de fundo ao passar o mouse */
+}
+
+.edit-input {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.edit-input:focus {
+    border-color: #00C1
