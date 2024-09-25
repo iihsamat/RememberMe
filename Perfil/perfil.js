@@ -22,10 +22,10 @@ function iniciarEdicao() {
 
 
     var editButton = document.querySelector('.editar');
-    editButton.innerHTML = '💾 Salvar';
+    editButton.innerHTML = 'Salvar';
     
     var encerrarButton = document.querySelector('.encerrar');
-    encerrarButton.innerHTML = '❌ Descartar Alterações';
+    encerrarButton.innerHTML = 'Descartar Alterações';
 
     isEditing = true;
 }
