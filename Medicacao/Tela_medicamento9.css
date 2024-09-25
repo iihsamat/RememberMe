@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Archivo Black', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+ 
+html,body{
+    Overflow: hidden;
+}
+ 
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 115%;
+    background: linear-gradient(to bottom, #52E3DB , #58AAD9);
+    padding: 60px;
+    position: relative;
+    margin-top: -20px;
+}
+ 
+header h1 {
+    font-size: 17px;
+    color: rgb(37, 35, 35);
+    margin-top: -44px;
+}
+ 
+.close-button {
+    position: absolute;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+ 
+.tabs {
+    position: relative;
+    display: flex;
+    margin-top: -45px;
+    margin-left: 2px;
+  }
+ 
+  .tab {
+    flex: 1;
+    padding: 8px 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    background-color: #f5f5f5;
+    color: #666;
+    cursor: pointer;
+  }
+ 
+  .tab.active {
+    background-color: white;
+    color: #00bfff;
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    color: rgb(37, 35, 35);
+ 
+  }
+ 
+  .tab.disabled {
+    background-color: #969696;
+    color: #efeded;
+    cursor: not-allowed;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100px;
+    opacity: 80%;
+    border: none;
+  }
+ 
+.form {
+    width: 100%;
+    margin-top: 20px;
+}
+ 
+h2 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+ 
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+ 
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+ 
+.checkbox-container input {
+    transform: scale(1.8); /* Aumenta o checkbox */
+    margin-right: 15px;
+}
+ 
+.dose-section, .interval-section, .time-section {
+    margin-bottom: 20px;
+    margin-top: 16px;
+}
+ 
+.dose-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+ 
+.control-button {
+    background-color: #00bcd4;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    width: 25px;  /* Define uma largura suficiente para o botão ser quadrado */
+    height: 25px; /* Define a altura igual à largura para fazer um quadrado */
+    font-size: 19px;  /* Tamanho da fonte para que os símbolos + e - sejam visíveis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px; /* Mantém os cantos levemente arredondados */
+    margin: 0 5px; /* Espaçamento lateral entre os botões e o input */
+}
+ 
+input[type="number"] {
+    width: 110px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+ 
+.interval-options {
+    display: flex;
+    margin-bottom: px;
+}
+ 
+.interval-options input {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+ 
+.interval-options label {
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.interval-section{
+    margin-top: -20px;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #706e6e;
+}
+
+.subtext {
+    color: #999;
+    position: relative;
+    font-size: 12px;
+    margin-left: 190px;
+  }
+ 
+.time-section input[type="time"] {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.time-section{
+    font-size: 15px;
+    color: #706e6e;
+    margin-left: 20px;
+}
+
+ 
+.submit-button {
+    width: 70%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #52E3DB , #58AAD9);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+ 
+.submit-button:hover {
+    background-color: #0097a7;
+}

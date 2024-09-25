@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inserir Tratamento - Dose</title>
+<link rel="stylesheet" href="Tela_medicamento9.css">
+</head>
+<body>
+ 
+<div class="container">
+<header>
+<h1>Inserir tratamento</h1>
+</header>
+<nav class="tabs">
+<button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
+<button class="tab active">Dose</button>&nbsp;&nbsp;
+<button class="tab disabled">Duração</button>
+</nav>
+ 
+    <form class="form">
+<h2>Dose</h2>
+<p>Qual a dose que deve ser administrada ao usuário em cada dose?</p>
+<div class="checkbox-container">
+<input type="checkbox" id="doseVariavel" name="doseVariavel">
+<label for="doseVariavel">Dose variável</label>
+</div>
+ <hr>
+        <div class="dose-section">
+<label for="dose">Dose • Comprimido</label>
+<div class="dose-controls">
+<button type="button" class="control-button">−</button>
+<input type="number" id="dose" name="dose" value="0" min="0">
+<button type="button" class="control-button">+</button>
+</div>
+</div>
+<hr>
+ 
+        <h2>Intervalo</h2>
+<p>Com que frequência ou em que horário o usuário deve receber a injeção?</p>
+<div class="interval-options">
+<input type="radio" id="horasDias" name="intervalo" value="horasDias" checked>
+<label for="horasDias">Horas/dias</label>
+ <input type="radio" id="horasDoDia" name="intervalo" value="horasDoDia">
+ <label for="horasDoDia">Horas do dia</label>
+</div><p class="subtext">(Café da manhã, almoço...)</p>
+
+</div>
+ 
+        <div class="interval-section">
+<label for="intervaloHoras">A cada quantas horas?</label>
+<div class="dose-controls">
+<button type="button" class="control-button">−</button>
+<input type="number" id="intervaloHoras" name="intervaloHoras" value="8" min="0">
+<button type="button" class="control-button">+</button>
+</div>
+</div>
+ 
+        <div class="time-section">
+<label for="primeiraAlimentacao" class="horaprimeira">Hora da primeira alimentação</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="time" class ="primeiraAlimentacao" value="21:00">
+</div>
+<button type="submit" class="submit-button">Seguindo</button>
+</form>
+</div>
+ 
+</body>
+</html>

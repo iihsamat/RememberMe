@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+a {
+    text-decoration: none;
+        
+}
+
+body {
+   
+
+    background-color: #f2f2f2;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 430px;
+    background: linear-gradient(to bottom, #52E3DB, #58AAD9); /* Mantém o gradiente */
+    padding: 8px 0;
+    position: relative;
+    font-size: 9px;
+    color: #2e2e2e;
+    opacity: 1;
+    z-index: 1; /* Mantém o conteúdo acima da camada */
+}
+header h1 {
+    font-size: 18px; /* Ajuste o tamanho da fonte, se necessário */
+    color: #2e2e2e;
+    position: relative;
+    top: 11px; /* Move o texto 20px para baixo */
+    margin: 0;
+}
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+    margin-left: 330px;
+    margin-top: -40px;
+}
+
+.container {
+    width: 430px;
+    height: 1000px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.header1 {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #292929;
+    position: relative;
+}
+
+.input-section {
+    padding: 15px;
+}
+
+.input-section input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.input-section label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.save-option {
+    padding: 10px 0;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: -254px;
+    font-style: italic;
+}
+.oters {
+    padding: 1px 0;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    margin-top: 14px;
+    margin-left: 4px;
+    font-style: italic;
+    margin-bottom: 13px;
+}
+.close-button {
+
+    position: absolute;
+    left: 40px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    margin-top: -px;
+    color: rgb(37, 35, 35);
+    
+
+}
+  .close-button2 {
+    position: absolute;
+    left: 40px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    margin-top: 1px;
+    color: rgb(37, 35, 35);
+
+  }
+.results {
+    max-height: 500px;
+    overflow-y: scroll;
+    line-height: 9px;
+}
+
+.results p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.results p:hover {
+    background-color: #f2f2f2;
+}
+
+.results p:last-child {
+    border-bottom: none;
+}
+
+.search-section {
+    width: 100%;
+    margin-top: -11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .tabs {
+    display: flex;
+    margin-top: 1px;
+  }
+ 
+  .tab {
+    flex: 1;
+    padding: 6px 0;
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px 5px 0 0;
+    background-color: #f5f5f5;
+    color: #666;
+    cursor: pointer;
+  }
+ 
+  .tab.active {
+    background-color: #E4E4E4;
+    color: #00bfff;
+    border-bottom: 2px solid rgb(214, 214, 214);
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    color: rgb(37, 35, 35);
+    margin-bottom: 10px;
+  }
+  .tab.activec{
+   
+    color: #00bfff;
+    border-bottom: 2px solid rgb(214, 214, 214);
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    color: rgb(37, 35, 35);
+    margin-bottom: 10px;
+    background-color: #11D6CA;
+
+  }
+ 
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+ 
+  .clear-button {
+    position: absolute;
+    right: 28px;
+    top: 128px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+  }
+

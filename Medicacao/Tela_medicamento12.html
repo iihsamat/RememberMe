@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Tratamento - Duração</title>
+    <link rel="stylesheet" href="tela_medicamento12.css">
+</head>
+<body>
+ 
+<div class="container">
+    <header>
+        <h1>Inserir tratamento</h1>
+    </header>
+ 
+    <div class="tabs">
+        <button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
+        <button class="tab active">Dose</button>&nbsp;&nbsp;
+        <button class="tab active">Duração</button>
+    </div>
+ 
+    <form class="form">
+        <h2>Duração</h2>
+        <p>Quando o tratamento começa e termina?</p>
+ 
+        <div class="date-section">
+            <label for="inicioTratamento">Início do tratamento</label>
+            <input type="date" id="inicioTratamento" name="inicioTratamento" placeholder="Ex: 07/07/24">
+ 
+            <label for="fimTratamento">Fim do tratamento</label>
+            <input type="date" id="fimTratamento" name="fimTratamento" placeholder="Ex: 14/07/24">
+        </div>
+ 
+        <div class="checkbox-container">
+            <input type="checkbox" id="tratamentoCronico" name="tratamentoCronico">
+            <div class="label-text">
+                <label for="tratamentoCronico">Tratamento crônico</label>
+                <p class="subtext">Não há data de término...</p>
+            </div>
+        </div>        
+         <a href="AdicionarMedicacao/Adicionar.html">
+        <button type="submit" class="submit-button">Seguindo</button>
+        </a>
+    </form>
+</div>
+ 
+</body>
+</html>

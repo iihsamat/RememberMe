@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Tratamento - Dose</title>
+    <link rel="stylesheet" href="Tela_medicamento9.css">
+    <style>
+        /* Você pode ajustar o estilo conforme necessário */
+        .container { padding: 20px; }
+        .tabs button { margin-right: 10px; }
+        .tab.disabled { opacity: 0.5; cursor: not-allowed; }
+        .dose-controls { display: flex; align-items: center; gap: 10px; }
+        .control-button { padding: 5px 10px; }
+        .days-grid input, .meal-time-section label { margin-right: 10px; }
+        .meal-time-section input[type="time"] { margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+<div id="doseContainer" class="container">
+    <header>
+        <h1>Inserir tratamento</h1>
+    </header>
+    
+    <nav class="tabs">
+        <button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
+        <button class="tab active">Dose</button>&nbsp;&nbsp;
+        <button class="tab disabled">Duração</button>
+    </nav>
+
+    <form class="form">
+        <h2>Dose</h2>
+        <p>Qual a dose que deve ser administrada ao usuário em cada dose?</p>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="doseVariavel" name="doseVariavel">
+            <label for="doseVariavel">Dose variável</label>
+        </div>
+        <hr>
+        
+        <div class="dose-section">
+            <label for="dose">Dose • Comprimido</label>
+            <div class="dose-controls">
+                <button type="button" class="control-button">−</button>
+                <input type="number" id="dose" name="dose" value="0" min="0">
+                <button type="button" class="control-button">+</button>
+            </div>
+        </div>
+        <hr>
+
+        <h2>Intervalo</h2>
+        <p>Com que frequência ou em que horário o usuário deve receber a injeção?</p>
+
+        <div class="interval-options">
+            <input type="radio" id="horasDias" name="intervalo" value="horasDias" checked>
+            <label for="horasDias">Horas/dias</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="horasDoDia" name="intervalo" value="horasDoDia">
+            <label for="horasDoDia">Horas do dia</label>
+        </div>
+        <p class="subtext">(Café da manhã, almoço...)</p>
+
+        <div class="interval-section">
+            <label for="intervaloHoras">A cada quantas horas?</label>
+            <div class="dose-controls">
+                <button type="button" class="control-button">−</button>
+                <input type="number" id="intervaloHoras" name="intervaloHoras" value="8" min="0">
+                <button type="button" class="control-button">+</button>
+            </div>
+        </div>
+        
+        <div class="time-section">
+            <label for="primeiraAlimentacao" class="horaprimeira">Hora da primeira alimentação</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="time" class ="primeiraAlimentacao" value="21:00">
+        </div>
+        
+        <button type="submit" class="submit-button">Seguindo</button>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const horasDoDiaRadio = document.getElementById('horasDoDia');
+    const horasDiasRadio = document.getElementById('horasDias');
+
+    horasDoDiaRadio.addEventListener('change', function () {
+        if (horasDoDiaRadio.checked) {
+            document.getElementById('doseContainer').innerHTML = `
+                <header>
+                    <button class="close-button">✕</button>
+                    <h1>Inserir tratamento</h1>
+                </header>
+
+                <div class="tabs">
+                    <button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
+                    <button class="tab active">Dose</button>&nbsp;&nbsp;
+                    <button class="tab disabled">Duração</button>
+                </div>
+                
+                <div class="container">
+                    <form class="form">
+                        <h2>Dose</h2>
+                        <p>Qual a dose que deve ser administrada ao usuário em cada dose?</p>
+
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="doseVariavel" name="doseVariavel">
+                            <label for="doseVariavel" class="label2">Dose variável</label>
+                        </div>
+                        <hr>
+
+                        <div class="dose-section">
+                            <label for="dose">Dose • Comprimido</label>
+                            <div class="dose-controls">
+                                <button type="button" class="control-button">−</button>
+                                <input type="number" id="dose" name="dose" value="0" min="0">
+                                <button type="button" class="control-button">+</button>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <h2 class="h2i">Intervalo</h2>
+                        <p>Com que frequência ou em que horário o usuário deve receber a injeção?</p>
+
+                        <div class="interval-options">
+                            <input type="radio" id="horasDias" name="intervalo" value="horasDias">
+                            <label for="horasDias">Horas/dias</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" id="horasDoDia" name="intervalo" value="horasDoDia" checked>
+                            <label for="horasDoDia">Horas do dia </label>
+                        </div>
+                        <p class="subtext">(Café da manhã, almoço...)</p>
+
+                        <div class="day-selection">
+                            <label>Selecione os dias</label>
+                            <div class="days-grid">
+                                <input type="button" name="dias" value="Seg">
+                                <input type="button" name="dias" value="Ter">
+                                <input type="button" name="dias" value="Qua">
+                                <input type="button" name="dias" value="Qui">
+                                <input type="button" name="dias" value="Sex">
+                                <input type="button" name="dias" value="Sab">
+                                <input type="button" name="dias" value="Dom">
+                            </div>
+                        </div>
+
+                        <div class="meal-time-section">
+                            <label><input type="checkbox" id="cafeManha" name="mealTimes">Café da manhã</label>
+                            <input type="time" id="horaCafe" value="08:30">
+
+                            <label><input type="checkbox" id="almoco" name="mealTimes">Almoço</label>
+                            <input type="time" id="horaAlmoco" value="13:00">
+
+                            <label><input type="checkbox" id="lanche" name="mealTimes">Lanche</label>
+                            <input type="time" id="horaLanche" value="17:00">
+
+                            <label><input type="checkbox" id="jantar" name="mealTimes">Jantar</label>
+                            <input type="time" id="horaJantar" value="20:30">
+                        </div>
+
+                        <button type="submit" class="submit-button">Seguindo</button>
+                    </form>
+                </div>
+            `;
+        }
+    });
+
+    horasDiasRadio.addEventListener('change', function () {
+        if (horasDiasRadio.checked) {
+            // Aqui você pode restaurar a tela original se necessário
+            // document.getElementById('doseContainer').innerHTML = "<original content>";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

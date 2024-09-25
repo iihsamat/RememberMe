@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inserir Tratamento</title>
+  <link rel="stylesheet" href="Tela_medicamento4.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="../Medicacao/AdicionarMedicacao/Adicionar.html">
+      <button class="close-button">✕</button>
+      </a>
+      <h1>Inserir tratamento</h1>
+    </header>
+ 
+    <div class="tabs">
+      <button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
+      <button class="tab disabled">Dose</button>&nbsp;&nbsp;
+      <button class="tab disabled">Duração</button>
+    </div>
+ 
+    <div class="form-section">
+      <h2>Medicamento</h2>
+      <p>Você encontrará todas as informações sobre o medicamento na caixa ou na bula.</p>
+ 
+      <label for="medicamento">Nome do medicamento</label>
+      <input type="text" id="medicamento" placeholder="Ibruprofeno, comprimido verde...">
+ <hr>
+ 
+<label for="formato">Formato de administração</label>
+<input type="button" class="botao" value="Pílula"> 
+<hr>
+
+<div class="checkbox-container">
+    <input type="checkbox" class ="controlarEstoque" name="controlarEstoque">
+    <label for="controlarEstoque">Quero controlar o estoque do medicamento</label>
+</div>
+<p class="subtext">O aplicativo irá notificá-lo quando você ficar sem medicação</p>
+      <a href="../Medicacao/Tela_medicamento5.html">
+      <button class="next-button">Seguindo</button>
+      </a>
+    </div>
+  </div>
+ 
+  <script src="Tela_medicamento2.js"></script>
+</body>
+</html>
