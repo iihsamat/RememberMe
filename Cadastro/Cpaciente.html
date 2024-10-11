@@ -10,11 +10,11 @@
 <body>
 
     <div class="container">
-        <form>
-            <input name="telefonePaciente" type="text" placeholder="Digite seu telefone:" required>
+        <form action="CadastroPaciente.php" method="POST">
+            <input name="telefonePaciente" type="number" placeholder="Digite seu telefone:" required>
             <input name="enderecoPaciente" type="text" placeholder="Digite seu endereço:" required>
             <div class="row">
-                <input name="numeroEnderecoPaciente" type="text" placeholder="Número:" required>
+                <input name="numeroEnderecoPaciente" type="number" placeholder="Número:" required>
                 <input name="bairroPaciente" type="text" placeholder="Bairro:" required>
             </div>
 
@@ -22,7 +22,7 @@
 
             <div class="row">
                 <input name="complementoPaciente" type="text" placeholder="Complemento:" required>
-                <input name="CEPPaciente" type="text" placeholder="CEP:" required>
+                <input name="CEPPaciente" type="number" placeholder="CEP:" required>
             </div>
 
             <div class="eye-icon">
@@ -35,7 +35,7 @@
                 <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" onclick="togglePassword('password2')">
             </div>
             <br>
-            <a href="../TelaLogin/TelaLogin.html" class="btn" role="button">Concluir</a>
+            <button type="submit" class="btn">Concluir</button>
         </form>
     </div>
 </body>   
