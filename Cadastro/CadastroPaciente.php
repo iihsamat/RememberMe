@@ -17,16 +17,19 @@
 
     include 'ConexaoBanco.php';
 
-    $sql = "INSERT INTO tb_paciente VALUES (NULL, '$nome_paciente', '$cpf_paciente', '$dataNascimento_paciente', '$SUS_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente','$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_paciente', '$confirmar_senha_paciente')";
-
-    $query = mysqli_query($conexao, $sql);
-
-    echo "Inserido com Sucesso";
-
-    if($query){
-    echo "<script>alert('Cadastrado com sucesso'); history.back();</script>";
-    } else{
-    echo "<script>alert('Error no script php'); history.back();</script>";
+    if (!$conexao) {
+        die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
     }
+
+    $sql = "INSERT INTO tb_paciente (nome_paciente, cpf_paciente, SUS_paciente, dataNascimento_paciente, email_paciente, telefone_paciente, endereco_paciente, numeroEndereco_paciente, bairro_paciente, cidade_paciente, complemento_paciente, CEP_paciente, senha_paciente, confirmar_senha_paciente) 
+            VALUES ('$nome_paciente', '$cpf_paciente', '$SUS_paciente', '$dataNascimento_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente', '$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_paciente', '$confirmar_senha_paciente')";
+
+    if (mysqli_query($conexao, $sql)) {
+        echo "<script>alert('Cadastrado com sucesso'); history.back();</script>";
+    } else {
+        echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
+    }
+    
+    mysqli_close($conexao);
 
 ?>
