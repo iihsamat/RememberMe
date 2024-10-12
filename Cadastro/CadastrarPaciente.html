@@ -15,14 +15,14 @@
                 <option value="Paciente">Paciente</option>
             </select>
         </div>
-        <form>
-            <input type="text" placeholder="Digite o nome:" required>
-            <input type="text" placeholder="Digite o CPF:" required>
-            <input type="text" placeholder="Cartão SUS:" required>
-            <input type="date" placeholder="Data de nascimento:" required>
-            <a href="../TelaLogin/TelaLogin.html" class="btn btn-primary" role="button">Continuar</a>
+        <form method="POST" action="CadastroPaciente.php" >
+            <input name="nomePaciente" type="text" placeholder="Digite o nome:" required>
+            <input name="CPFPaciente" type="number" placeholder="Digite o CPF:" required>
+            <input name="dataNascimentoPaciente" type="date" placeholder="Data de nascimento:" required>
+            <input name="emailPaciente" type="email" placeholder="Digite seu email:" required>
+            <input name="SUSPaciente" type="number" placeholder="Cartão SUS:" required>
+            <button type="submit" class="btn btn-primary">Continuar</button>
         </form>
     </div>
-
 </body>
 </html>
