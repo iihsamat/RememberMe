@@ -71,6 +71,21 @@ function verificarCadastro() {
     }
 }
 
+// Atualizar a cor dos botões nas novas telas
+function atualizarCorBotoes() {
+    var tipoCadastro = document.getElementById("tipoCadastro").value;
+    var botoes = document.querySelectorAll('.btn');
+
+    botoes.forEach(botao => {
+        botao.classList.remove('paciente', 'cuidador');
+        if (tipoCadastro === "Cuidador") {
+            botao.classList.add('cuidador');
+        } else if (tipoCadastro === "Paciente") {
+            botao.classList.add('paciente');
+        }
+    });
+}
+
 function toggleSenha(id) {
     var input = document.getElementById(id);
     input.type = input.type === "password" ? "text" : "password";
@@ -80,6 +95,7 @@ function toggleSenha(id) {
 function finalizarCadastro() {
     var senha = document.getElementById("senha").value;
     var confirmarSenha = document.getElementById("confirmarSenha").value;
+    var tipoCadastro = document.getElementById("tipoCadastro").value;
 
     if (senha !== confirmarSenha) {
         alert("As senhas não coincidem. Por favor, tente novamente.");
@@ -87,4 +103,38 @@ function finalizarCadastro() {
     }
 
     alert("Cadastro concluído com sucesso!");
+
+    if (tipoCadastro === "Paciente") {
+        // Redirecionar para a tela de login
+        window.location.href = "../TelaLogin/TelaLogin.html";
+    } else if (tipoCadastro === "Cuidador") {
+        // Mostrar formulário para cadastrar o paciente - Etapa 1
+        document.getElementById("formulario-dinamico").style.display = "none";
+        document.getElementById("cadastro-paciente-etapa1").style.display = "block";
+        atualizarCorBotoes(); // Atualizar a cor dos botões
+    }
 }
+
+// Função para avançar para a etapa 2 do cadastro do paciente
+function avancarParaEtapa2() {
+    document.getElementById("cadastro-paciente-etapa1").style.display = "none";
+    document.getElementById("cadastro-paciente-etapa2").style.display = "block";
+    atualizarCorBotoes(); // Atualizar a cor dos botões
+}
+
+// Função para finalizar o cadastro do paciente adicional
+// Função para finalizar o cadastro do paciente adicional
+function finalizarCadastroPaciente() {
+    var endereco = document.querySelector("#cadastro-paciente-etapa2 input[placeholder='Digite o endereço do paciente:']").value;
+
+    if (endereco === "") {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    alert("Cadastro do paciente concluído com sucesso!");
+
+    // Redirecionar para a tela de login
+    window.location.href = "../TelaLogin/TelaLogin.html";
+}
+

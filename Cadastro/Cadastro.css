@@ -16,7 +16,7 @@ body {
     margin: 0;
 }
 
-h1 {
+h1, h2 {
     font-family: "Archivo Black", sans-serif;
 }
 
@@ -32,7 +32,7 @@ h1 {
 input, select {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin:8px 0;
     border: 2px solid #58AAD9;
     border-radius: 10px;
     box-sizing: border-box;
@@ -96,7 +96,7 @@ input, select {
 
 .input-container input {
     width: 100%;
-    padding-right: 40px; /* Espaço para o ícone do olho */
+    padding-right: 40px;
 }
 
 .eye {
