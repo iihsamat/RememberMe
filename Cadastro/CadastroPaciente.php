@@ -4,7 +4,6 @@
     $cpf_paciente = $_POST['CPFPaciente'];
     $SUS_paciente = $_POST['SUSPaciente'];
     $dataNascimento_paciente = $_POST['dataNascimentoPaciente'];
-    $email_paciente = $_POST['emailPaciente'];
     $telefone_paciente = $_POST['telefonePaciente'];
     $endereco_paciente = $_POST['enderecoPaciente'];
     $numeroEndereco_paciente = $_POST['numeroEnderecoPaciente'];
@@ -12,8 +11,6 @@
     $cidade_paciente = $_POST['cidadePaciente'];
     $complemento_paciente = $_POST['complementoPaciente'];
     $CEP_paciente = $_POST['CEPPaciente'];
-    $senha_paciente = $_POST['senhaPaciente'];
-    $confirmar_senha_paciente = $_POST['confirmarSenhaPaciente'];
 
     include 'ConexaoBanco.php';
 
@@ -21,8 +18,8 @@
         die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO tb_paciente (nome_paciente, cpf_paciente, SUS_paciente, dataNascimento_paciente, email_paciente, telefone_paciente, endereco_paciente, numeroEndereco_paciente, bairro_paciente, cidade_paciente, complemento_paciente, CEP_paciente, senha_paciente, confirmar_senha_paciente) 
-            VALUES ('$nome_paciente', '$cpf_paciente', '$SUS_paciente', '$dataNascimento_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente', '$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_paciente', '$confirmar_senha_paciente')";
+    $sql = "INSERT INTO tb_paciente (nome_paciente, cpf_paciente, SUS_paciente, dataNascimento_paciente, telefone_paciente, endereco_paciente, numeroEndereco_paciente, bairro_paciente, cidade_paciente, complemento_paciente, CEP_paciente) 
+            VALUES ('$nome_paciente', '$cpf_paciente', '$SUS_paciente', '$dataNascimento_paciente','$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente', '$cidade_paciente', '$complemento_paciente', '$CEP_paciente')";
 
     if (mysqli_query($conexao, $sql)) {
         echo "<script>alert('Cadastrado com sucesso'); history.back();</script>";
