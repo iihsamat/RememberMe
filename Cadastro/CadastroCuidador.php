@@ -24,6 +24,11 @@
     $sql = "INSERT INTO tb_cuidador (nome_cuidador, cpf_cuidador, dataNascimento_cuidador, COREN_cuidador, email_cuidador, telefone_cuidador, endereco_cuidador, numeroEndereco_cuidador, bairro_cuidador, cidade_cuidador, complemento_cuidador, CEP_cuidador, senha_cuidador,confirmar_senha_cuidador) 
             VALUES ('$nome_cuidador', '$cpf_cuidador', '$dataNascimento_cuidador', '$COREN_cuidador', '$email_cuidador', '$telefone_cuidador', '$endereco_cuidador', '$numeroEndereco_cuidador', '$bairro_cuidador','$cidade_cuidador', '$complemento_cuidador', '$CEP_cuidador', '$senha_cuidador','$confirmar_senha_cuidador')";
 
+    if (mysqli_query($conexao, $sql)) {
+    echo "<script>alert('Cadastrado com sucesso'); history.back();</script>";
+    } else {
+    echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
+    }
 
     mysqli_close($conexao);
-?>
+?> 

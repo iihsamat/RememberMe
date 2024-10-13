@@ -1,5 +1,5 @@
-// Habilitar campos ao selecionar o tipo de cadastro
-function habilitarCampos() {
+ // Habilitar campos ao selecionar o tipo de cadastro
+ function habilitarCampos() {
     var tipoCadastro = document.getElementById("tipoCadastro").value;
     var inputs = document.querySelectorAll('input, select');
     var btnAvancar = document.querySelector('.btn');
@@ -91,23 +91,24 @@ function toggleSenha(id) {
     input.type = input.type === "password" ? "text" : "password";
 }
 
+// Função para finalizar o cadastro
 function finalizarCadastro() {
     var senha = document.getElementById("senha").value;
     var confirmarSenha = document.getElementById("confirmarSenha").value;
     var tipoCadastro = document.getElementById("tipoCadastro").value;
 
-    // Verifica se as senhas coincidem
     if (senha !== confirmarSenha) {
         alert("As senhas não coincidem. Por favor, tente novamente.");
         return;
     }
+
+    alert("Cadastro concluído com sucesso!");
 
     // Finalmente submete o formulário
     let formulario = document.getElementById("formulario");
     formulario.submit(); // Agora o formulário é enviado ao PHP
 
     if (tipoCadastro === "Paciente") {
-        // Redirecionar para a tela de login
         window.location.href = "../TelaLogin/TelaLogin.html";
     } else if (tipoCadastro === "Cuidador") {
         // Mostrar formulário para cadastrar o paciente - Etapa 1
@@ -135,10 +136,6 @@ function finalizarCadastroPaciente() {
     }
 
     alert("Cadastro do paciente concluído com sucesso!");
-
-        // Finalmente submete o formulário
-        let formulario2 = document.getElementById("formulario2");
-        formulario2.submit(); // Agora o formulário é enviado ao PHP
 
     // Redirecionar para a tela de login
     window.location.href = "../TelaLogin/TelaLogin.html";
