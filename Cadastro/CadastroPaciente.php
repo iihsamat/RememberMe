@@ -21,7 +21,7 @@
             VALUES ('$nome_paciente', '$cpf_paciente', '$SUS_paciente', '$dataNascimento_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente', '$cidade_paciente', '$complemento_paciente', '$CEP_paciente')";
 
     if (mysqli_query($conexao, $sql)) {
-        echo "<script> history.back(); </script>";
+        header("location: ../TelaLogin/TelaLogin.html");
     } else {
         echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
     }
