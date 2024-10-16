@@ -125,8 +125,6 @@ function avancarParaEtapa2() {
     atualizarCorBotoes(); // Atualizar a cor dos botões
 }
 
-// Função para finalizar o cadastro do paciente adicional
-// Função para finalizar o cadastro do paciente adicional
 function finalizarCadastroPaciente() {
     var endereco = document.querySelector("#cadastro-paciente-etapa2 input[placeholder='Digite o endereço do paciente:']").value;
 
@@ -136,6 +134,9 @@ function finalizarCadastroPaciente() {
     }
 
     alert("Cadastro do paciente concluído com sucesso!");
+
+    let formulario2 = document.getElementById("formulario2");
+    formulario2.submit(); // Agora o formulário é enviado ao PHP
 
     // Redirecionar para a tela de login
     window.location.href = "../TelaLogin/TelaLogin.html";
