@@ -17,9 +17,6 @@
         die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    // Criptografar a senha
-    $senha_paciente_hash = password_hash($senha_paciente, PASSWORD_DEFAULT);
-
     $sql = "INSERT INTO tb_paciente (nome_paciente, cpf_paciente, SUS_paciente, dataNascimento_paciente, endereco_paciente, numeroEndereco_paciente, bairro_paciente, cidade_paciente, complemento_paciente, CEP_paciente) 
             VALUES ('$nome_paciente', '$cpf_paciente', '$SUS_paciente', '$dataNascimento_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente', '$cidade_paciente', '$complemento_paciente', '$CEP_paciente')";
 

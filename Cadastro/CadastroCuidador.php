@@ -12,7 +12,7 @@
     $complemento_cuidador = $_POST['complementoCuidador'];
     $CEP_cuidador = $_POST['CEPCuidador'];
     $senha_cuidador = $_POST['senhaCuidador'];
-    $confirmar_senha_cuidador = $_POST['confirmarSenhaCuidador'];
+    //$confirmar_senha_cuidador = $_POST['confirmarSenhaCuidador'];
 
     include 'ConexaoBanco.php';
 

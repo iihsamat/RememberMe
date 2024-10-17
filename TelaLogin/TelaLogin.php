@@ -5,8 +5,8 @@ $cpfCuidador = $_POST['cpfCuidador'];
 $cpfPaciente = $_POST['CPFPaciente'];
 $senhaCuidador = $_POST['senhaCuidador'];
 
-$select = "SELECT * FROM tb_cuidador WHERE cpfCuidador = '$cpfCuidador'";
-$select2 = "SELECT * FROM tb_paciente WHERE CPFPaciente = '$cpfPaciente'";
+$select = "SELECT * FROM tb_cuidador WHERE cpf_cuidador = '$cpfCuidador'";
+$select2 = "SELECT * FROM tb_paciente WHERE cpf_paciente = '$cpfPaciente'";
 
 $query = mysqli_query ($conexao,$select);
 $result = mysqli_fetch_array($query);
@@ -14,11 +14,12 @@ $result = mysqli_fetch_array($query);
 $query2 = mysqli_query ($conexao,$select2);
 $result2 = mysqli_fetch_array($query2);
 
-$cpfCuidador = $result['cpfCuidador'];
-$cpfPaciente = $result2['CPFPaciente'];
+$cpf_cuidador = $result['cpf_cuidador'];
+$cpf_paciente = $result2['cpf_paciente'];
+$senha_cuidador = $result['senha_cuidador'];
 
-if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente){
-    header('location: ../TelaLogin/TelaLogin.html');
+if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente && password_verify ($senhaCuidador, $senha_cuidador)){
+    header('location: ../HomePage/homepage.html');
 }
 else{
     echo "<script> alert('Usuário Inválido'); history.back();</script>";
