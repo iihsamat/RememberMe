@@ -1,5 +1,4 @@
 <?php
-
     $nome_cuidador = $_POST['nomeCuidador'];
     $cpf_cuidador = $_POST['cpfCuidador'];
     $dataNascimento_cuidador = $_POST['dataNascimentoCuidador'];
@@ -21,14 +20,17 @@
         die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO tb_cuidador (nome_cuidador, cpf_cuidador, dataNascimento_cuidador, COREN_cuidador, email_cuidador, telefone_cuidador, endereco_cuidador, numeroEndereco_cuidador, bairro_cuidador, cidade_cuidador, complemento_cuidador, CEP_cuidador, senha_cuidador,confirmar_senha_cuidador) 
-            VALUES ('$nome_cuidador', '$cpf_cuidador', '$dataNascimento_cuidador', '$COREN_cuidador', '$email_cuidador', '$telefone_cuidador', '$endereco_cuidador', '$numeroEndereco_cuidador', '$bairro_cuidador','$cidade_cuidador', '$complemento_cuidador', '$CEP_cuidador', '$senha_cuidador','$confirmar_senha_cuidador')";
+    // Criptografar a senha
+    $senha_cuidador_hash = password_hash($senha_cuidador, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO tb_cuidador (nome_cuidador, cpf_cuidador, dataNascimento_cuidador, COREN_cuidador, email_cuidador, telefone_cuidador, endereco_cuidador, numeroEndereco_cuidador, bairro_cuidador, cidade_cuidador, complemento_cuidador, CEP_cuidador, senha_cuidador) 
+            VALUES ('$nome_cuidador', '$cpf_cuidador', '$dataNascimento_cuidador', '$COREN_cuidador', '$email_cuidador', '$telefone_cuidador', '$endereco_cuidador', '$numeroEndereco_cuidador', '$bairro_cuidador','$cidade_cuidador', '$complemento_cuidador', '$CEP_cuidador', '$senha_cuidador_hash')";
 
     if (mysqli_query($conexao, $sql)) {
-    echo "<script> history.back(); </script>";
+        echo "<script> history.back(); </script>";
     } else {
-    echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
+        echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
     }
 
     mysqli_close($conexao);
-?> 
+?>
