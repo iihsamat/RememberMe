@@ -16,9 +16,9 @@ $result2 = mysqli_fetch_array($query2);
 
 $cpf_cuidador = $result['cpf_cuidador'];
 $cpf_paciente = $result2['cpf_paciente'];
-$senha_cuidador = $result['senha_cuidador'];
+$senha = $result['senha'];
 
-if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente && password_verify ($senhaCuidador, $senha_cuidador)){
+if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente && password_verify ($senhaCuidador, $senha)){
     header('location: ../HomePage/homepage.html');
 }
 else{

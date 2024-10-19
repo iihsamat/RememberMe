@@ -1,17 +1,17 @@
 <?php
-    $nome_cuidador = $_POST['nomeCuidador'];
+    $nm_cuidador = $_POST['nomeCuidador'];
     $cpf_cuidador = $_POST['cpfCuidador'];
-    $dataNascimento_cuidador = $_POST['dataNascimentoCuidador'];
-    $COREN_cuidador = $_POST['CORENCuidador'];
-    $email_cuidador = $_POST['emailCuidador'];
-    $telefone_cuidador = $_POST['telefoneCuidador'];
-    $endereco_cuidador = $_POST['enderecoCuidador'];
-    $numeroEndereco_cuidador = $_POST['numeroEnderecoCuidador'];
-    $bairro_cuidador = $_POST['bairroCuidador'];
-    $cidade_cuidador = $_POST['cidadeCuidador'];
-    $complemento_cuidador = $_POST['complementoCuidador'];
-    $CEP_cuidador = $_POST['CEPCuidador'];
-    $senha_cuidador = $_POST['senhaCuidador'];
+    $dt_nascimento = $_POST['dataNascimentoCuidador'];
+    $coren = $_POST['CORENCuidador'];
+    $nm_email = $_POST['emailCuidador'];
+    $nr_telefone = $_POST['telefoneCuidador'];
+    $nm_endereco = $_POST['enderecoCuidador'];
+    $nr_endereco = $_POST['numeroEnderecoCuidador'];
+    $nm_bairro = $_POST['bairroCuidador'];
+    $nm_cidade = $_POST['cidadeCuidador'];
+    $ds_complemento = $_POST['complementoCuidador'];
+    $nr_cep = $_POST['CEPCuidador'];
+    $senha = $_POST['senhaCuidador'];
     //$confirmar_senha_cuidador = $_POST['confirmarSenhaCuidador'];
 
     include 'ConexaoBanco.php';
@@ -21,10 +21,10 @@
     }
 
     // Criptografar a senha
-    $senha_cuidador_hash = password_hash($senha_cuidador, PASSWORD_DEFAULT);
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO tb_cuidador (nome_cuidador, cpf_cuidador, dataNascimento_cuidador, COREN_cuidador, email_cuidador, telefone_cuidador, endereco_cuidador, numeroEndereco_cuidador, bairro_cuidador, cidade_cuidador, complemento_cuidador, CEP_cuidador, senha_cuidador) 
-            VALUES ('$nome_cuidador', '$cpf_cuidador', '$dataNascimento_cuidador', '$COREN_cuidador', '$email_cuidador', '$telefone_cuidador', '$endereco_cuidador', '$numeroEndereco_cuidador', '$bairro_cuidador','$cidade_cuidador', '$complemento_cuidador', '$CEP_cuidador', '$senha_cuidador_hash')";
+    $sql = "INSERT INTO tb_cuidador (nm_cuidador, cpf_cuidador, dt_nascimento, coren, nm_email, nr_telefone, nm_endereco, nr_endereco, nm_bairro, nm_cidade, ds_complemento, nr_cep, senha) 
+            VALUES ('$nm_cuidador', '$cpf_cuidador', '$dt_nascimento', '$coren', '$nm_email', '$nr_telefone', '$nm_endereco', '$nr_endereco', '$nm_bairro','$nm_cidade', '$ds_complemento', '$nr_cep', '$senha_hash')";
 
     if (mysqli_query($conexao, $sql)) {
         echo "<script> history.back(); </script>";
