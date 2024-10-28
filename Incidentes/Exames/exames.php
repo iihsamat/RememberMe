@@ -12,7 +12,7 @@
         die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO tb_paciente (cd_pedido, dt_entrada, dt_impressao, nm_medico_solicitante, dt_nascimento, nm_laboratorio)
+    $sql = "INSERT INTO tb_exames (cd_pedido, dt_entrada, dt_impressao, nm_medico_solicitante, dt_nascimento, nm_laboratorio)
             VALUES ('$cd_pedido','$dt_entrada', '$dt_impressao', '$nm_medico_solicitante', '$dt_nascimento', '$nm_laboratorio')";
 
     if (mysqli_query($conexao, $sql)) {
