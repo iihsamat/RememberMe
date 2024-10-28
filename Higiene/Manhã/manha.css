@@ -154,7 +154,7 @@ input[type="checkbox"]:checked::after {
 }
 
 
-.fezes-section {
+.fezes-section, .urina-section {
     background-color: #f0f0f0;
     padding: 15px;
     border-radius: 8px;
