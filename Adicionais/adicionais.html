@@ -16,39 +16,43 @@
             <h1>ADICIONAIS</h1>
         </header>
 
-        <form class="ad-form">
+        <form action="adicionais.php" method="post" class="ad-form">
             <ul>
                 <li>
                     <label for="diagnostico-ano">Ano do diagnóstico:</label>
-                    <select id="diagnostico-ano" name="diagnostico-ano">
+                    <select id="diagnostico-ano" name="anoDiagnostico">
                         <option value="">Ano</option>
                     </select>
                 </li>
                 <li>
                     <label for="alimenta">Se alimenta sozinho?</label>
-                    <input type="checkbox" id="alimenta">
+                    <input type="checkbox" value="1" name="alimentaSozinho" id="alimenta">
                 </li>
                 <li>
                     <label for="diabete">Tem diabetes?</label>
-                    <input type="checkbox" id="diabete">
+                    <input type="checkbox" value="1" name="diabetes" id="diabete">
                 </li>
                 <li>
                     <label for="pressao">Tem pressão alta?</label>
-                    <input type="checkbox" id="pressoa">
+                    <input type="checkbox" value="1" name="pressaoAlta" id="pressoa">
                 </li>
                 <li>
                     <label for="colesterol">Tem colesterol?</label>
-                    <input type="checkbox" id="colesterol">
+                    <input type="checkbox" value="1" name="colesterol" id="colesterol">
                 </li>
                 <li>
                     <label for="medicacao">Faz uso de Medicação?</label>
-                    <input type="checkbox" id="medicacao">
+                    <input type="checkbox" value="1" name="usaMedicacao" id="medicacao">
                 </li>
                 <li>
                     <label for="medicacao">Faz uso de P.A</label>
-                    <input type="checkbox" id="medicacao">
+                    <input type="checkbox" value="1" name="controlePA" id="medicacao">
                 </li>
             </ul>
+            <div class="button-row">
+                <button type="button" class="discard-button">Descartar</button>
+                <button type="submit" id="save-button" class="save-button">Salvar</button>
+            </div>
         </form>
     </div>
 </body>
