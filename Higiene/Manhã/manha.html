@@ -79,12 +79,34 @@
                 </div>
 
                 <li>
-                    <label for="urina">Urina?</label>
-                    <select id="urina">
-                        <option value="normal">Normal</option>
-                        <option value="alterada">Alterada</option>
-                    </select>
+                    <label for="urina-toggle">Urina?</label>
+                    <button type="button" id="urina-toggle" class="toggle-button">V</button>
                 </li>
+
+                <div id="urina-section" class="urina-section">
+
+                    <div class="odor-section">
+                        <div class="section-title">ODOR:</div>
+                        <div class="checkbox-group odor-group">
+                            <label><input type="checkbox"> Normal</label>
+                            <label><input type="checkbox"> Forte</label>
+                            <label><input type="checkbox"> Fátido</label>
+                            <label><input type="checkbox"> Outros</label>
+                        </div>
+                    </div>
+
+                    <div class="coloracao-section">
+                        <div class="section-title">COLORAÇÃO:</div>
+                        <div class="checkbox-group coloracao-group">
+                            <label><input type="checkbox"> Normal</label>
+                            <label><input type="checkbox"> Verde</label>
+                            <label><input type="checkbox"> Amarelo</label>
+                            <label><input type="checkbox"> Transp</label>
+                            <label><input type="checkbox"> Vermelho</label>
+                            <label><input type="checkbox"> Outros</label>
+                        </div>
+                    </div>
+                </div>
 
                 <li>
                     <label for="fralda">Utilizou fralda?</label>
