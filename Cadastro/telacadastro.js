@@ -1,5 +1,5 @@
-// Habilitar campos ao selecionar o tipo de cadastro
-function habilitarCampos() {
+ // Habilitar campos ao selecionar o tipo de cadastro
+ function habilitarCampos() {
     var tipoCadastro = document.getElementById("tipoCadastro").value;
     var inputs = document.querySelectorAll('input, select');
     var btnAvancar = document.querySelector('.btn');
@@ -104,8 +104,11 @@ function finalizarCadastro() {
 
     alert("Cadastro concluído com sucesso!");
 
+    // Finalmente submete o formulário
+    let formulario = document.getElementById("formulario");
+    formulario.submit(); // Agora o formulário é enviado ao PHP
+
     if (tipoCadastro === "Paciente") {
-        // Redirecionar para a tela de login
         window.location.href = "../TelaLogin/TelaLogin.html";
     } else if (tipoCadastro === "Cuidador") {
         // Mostrar formulário para cadastrar o paciente - Etapa 1
@@ -122,8 +125,6 @@ function avancarParaEtapa2() {
     atualizarCorBotoes(); // Atualizar a cor dos botões
 }
 
-// Função para finalizar o cadastro do paciente adicional
-// Função para finalizar o cadastro do paciente adicional
 function finalizarCadastroPaciente() {
     var endereco = document.querySelector("#cadastro-paciente-etapa2 input[placeholder='Digite o endereço do paciente:']").value;
 
@@ -133,6 +134,9 @@ function finalizarCadastroPaciente() {
     }
 
     alert("Cadastro do paciente concluído com sucesso!");
+
+    let formulario2 = document.getElementById("formulario2");
+    formulario2.submit(); // Agora o formulário é enviado ao PHP
 
     // Redirecionar para a tela de login
     window.location.href = "../TelaLogin/TelaLogin.html";

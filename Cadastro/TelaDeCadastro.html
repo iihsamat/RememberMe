@@ -19,69 +19,72 @@
             <option value="Cuidador">Cuidador</option>
         </select>
 
+        <form id="formulario" action="CadastroCuidador.php" method="post">
         <div id="formulario-comum">
-            <input type="text" id="nome" placeholder="Digite seu nome:" disabled required>
-            <input type="number" id="cpf" placeholder="Digite seu CPF:" disabled required>
-            <input type="date" id="dataNascimento" placeholder="Data de nascimento:" disabled required>
-            <input type="email" id="email" placeholder="Digite seu Email:" disabled required>
+            <input type="text"  name="nomeCuidador" id="nome" placeholder="Digite seu nome:" disabled required>
+            <input type="number" name="cpfCuidador" id="cpf" placeholder="Digite seu CPF:" disabled required>
+            <input type="date" name="dataNascimentoCuidador" id="dataNascimento" placeholder="Data de nascimento:" disabled required>
+            <input type="email" name="emailCuidador" id="email" placeholder="Digite seu Email:" disabled required>
             <div id="sus" style="display:none;">
-                <input type="text" id="susInput" placeholder="Digite seu Cartão SUS">
+                <input type="text" name="" id="susInput" placeholder="Digite seu Cartão SUS">
             </div>
             <div id="coren" style="display:none;">
-                <input type="text" id="corenInput" placeholder="Digite seu COREN (Não Obrigatório)">
+                <input type="text" name="CORENCuidador" id="corenInput" placeholder="Digite seu COREN (Não Obrigatório)">
             </div>
             <button type="button" class="btn" onclick="verificarCadastro()">Próxima Etapa</button>
         </div>
 
         <div id="formulario-dinamico" style="display:none;">
-            <input type="number" placeholder="Digite seu telefone:" required>
-            <input type="text" placeholder="Digite seu endereço:" required>
+            <input type="number" name="telefoneCuidador" placeholder="Digite seu telefone:" required>
+            <input type="text" name="enderecoCuidador" placeholder="Digite seu endereço:" required>
             <div class="row">
-                <input type="number" placeholder="Número:" required>
-                <input type="text" placeholder="Bairro:" required>
+                <input type="number" name="numeroEnderecoCuidador" placeholder="Número:" required>
+                <input type="text" name="bairroCuidador" placeholder="Bairro:" required>
             </div>
-            <input type="text" placeholder="Cidade:" required>
+            <input type="text" name="cidadeCuidador" placeholder="Cidade:" required>
             <div class="row">
-                <input type="text" placeholder="Complemento:" required>
-                <input type="number" placeholder="CEP:" required>
+                <input type="text" name="complementoCuidador" placeholder="Complemento:" required>
+                <input type="number" name="CEPCuidador" placeholder="CEP:" required>
             </div>
 
             <div class="input-container">
-                <input type="password" id="senha" placeholder="Digite sua senha:" required />
+                <input type="password" name="senhaCuidador" id="senha" placeholder="Digite sua senha:" required />
                 <span class="eye" onclick="toggleSenha('senha')">👁️</span>
             </div>
             <div class="input-container">
-                <input type="password" id="confirmarSenha" placeholder="Confirme sua senha:" required />
+                <input type="password" name="confirmarSenhaCuidador" id="confirmarSenha" placeholder="Confirme sua senha:" required />
                 <span class="eye" onclick="toggleSenha('confirmarSenha')">👁️</span>
             </div>
 
             <button type="button" class="btn concluir" onclick="finalizarCadastro()">Concluir</button>
         </div>
+    </form>
 
+        <form id="formulario2" action="CadastroPaciente.php" method="post">
         <div id="cadastro-paciente-etapa1" style="display:none;">
             <h2>Cadastro de Paciente</h2>
-            <input type="text" placeholder="Digite o nome do paciente:" required>
-            <input type="number" placeholder="Digite o CPF do paciente:" required>
-            <input type="date" placeholder="Data de nascimento do paciente:" required>
-            <input type="number" placeholder="Digite o Cartão SUS do paciente:" required>
+            <input type="text" name="nomePaciente" placeholder="Digite o nome do paciente:" required>
+            <input type="number" name="CPFPaciente" placeholder="Digite o CPF do paciente:" required>
+            <input type="date" name="dataNascimentoPaciente" placeholder="Data de nascimento do paciente:" required>
+            <input type="number" name="SUSPaciente" placeholder="Digite o Cartão SUS do paciente:" required>
             <button type="button" class="btn" onclick="avancarParaEtapa2()">Próxima Etapa</button>
         </div>
 
         <div id="cadastro-paciente-etapa2" style="display:none;">
             <h2>Cadastro de Paciente</h2>
-            <input type="text" placeholder="Digite o endereço do paciente:" required>
+            <input type="text" name="enderecoPaciente" placeholder="Digite o endereço do paciente:" required>
             <div class="row">
-                <input type="number" placeholder="Número:" required>
-                <input type="text" placeholder="Bairro:" required>
+                <input type="number" name="numeroEnderecoPaciente" placeholder="Número:" required>
+                <input type="text" name="bairroPaciente" placeholder="Bairro:" required>
             </div>
-            <input type="text" placeholder="Cidade:" required>
+            <input type="text" name="cidadePaciente" placeholder="Cidade:" required>
             <div class="row">
-                <input type="text" placeholder="Complemento:" required>
-                <input type="number" placeholder="CEP:" required>
+                <input type="text" name="complementoPaciente" placeholder="Complemento:" required>
+                <input type="number" name="CEPPaciente" placeholder="CEP:" required>
             </div>
-            <button type="button" class="btn concluir" onclick="finalizarCadastroPaciente()">Concluir Cadastro do Paciente</button>
+            <button type="submit" class="btn concluir" onclick="finalizarCadastroPaciente()">Concluir Cadastro do Paciente</button>
         </div>
-        
+        </form>
 
     </div>
 

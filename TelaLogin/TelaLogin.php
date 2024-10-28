@@ -1,43 +1,27 @@
 <?php
-include 'conexao.php';
-session_start();
+include '../Cadastro/ConexaoBanco.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $tipo_usuario = $_POST['tipo_usuario'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+$cpfCuidador = $_POST['cpfCuidador'];
+$cpfPaciente = $_POST['CPFPaciente'];
+$senhaCuidador = $_POST['senhaCuidador'];
 
-    // Proteção contra SQL Injection
-    $username = $conn->real_escape_string($username);
+$select = "SELECT * FROM tb_cuidador WHERE cpf_cuidador = '$cpfCuidador'";
+$select2 = "SELECT * FROM tb_paciente WHERE cpf_paciente = '$cpfPaciente'";
 
-    if ($tipo_usuario == "paciente") {
-        $sql = "SELECT id, cpf, password FROM pacientes WHERE cpf = '$username'";
-    } elseif ($tipo_usuario == "cuidador") {
-        $cpf_paciente = $_POST['cpf_paciente'];
-        $cpf_paciente = $conn->real_escape_string($cpf_paciente);
-        $sql = "SELECT id, cpf, cpf_paciente, password FROM cuidadores WHERE cpf = '$username' AND cpf_paciente = '$cpf_paciente'";
-    }
-    $result = $conn->query($sql);
+$query = mysqli_query ($conexao,$select);
+$result = mysqli_fetch_array($query);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Verificação da senha
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['tipo_usuario'] = $tipo_usuario;
-            header("Location: dashboard.php");
-            if($lembrar_me)
-            {
-               setcookie('username',$username,time() + 7000 * 30, "/");
-            }
-            exit();
-        } else {
-            $error = "Senha incorreta.";
-        }
-    } else {
-        $error = "Usuário não encontrado.";
-    }
+$query2 = mysqli_query ($conexao,$select2);
+$result2 = mysqli_fetch_array($query2);
 
-    $conn->close();
+$cpf_cuidador = $result['cpf_cuidador'];
+$cpf_paciente = $result2['cpf_paciente'];
+$senha = $result['senha'];
+
+if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente && password_verify ($senhaCuidador, $senha)){
+    header('location: ../HomePage/homepage.html');
+}
+else{
+    echo "<script> alert('Usuário Inválido'); history.back();</script>";
 }
 ?>
