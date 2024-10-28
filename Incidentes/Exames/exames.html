@@ -17,20 +17,20 @@
     </header>
     
     <form class="exam-form">
-      <input type="text" id="pedido" placeholder="Número pedido">
+      <input type="text" name="numeroPedido" id="pedido" placeholder="Número pedido">
       
       <div class="input-row">
         <div>
-            <input type="text"  placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="text" name="dataEntrada" placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
          </div>
         <div class="input-sla">
-            <input type="text"  placeholder="Data impressão" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
+            <input type="text" name="dataImpressao" placeholder="Data impressão" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
         </div>
       </div>
 
-      <input type="text" id="medico" placeholder="Médico solicitante">
+      <input type="text" name="medicoSolicitante" id="medico" placeholder="Médico solicitante">
       
-      <input type="text" id="laboratorio" placeholder="Laboratório prestador">
+      <input type="text" name="laboratorio" id="laboratorio" placeholder="Laboratório prestador">
 
       <div class="file-upload">
         <label for="arquivo" class="file-label" placeholder="Anexar Arquivo">
