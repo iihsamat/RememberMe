@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 24-Out-2024 às 23:55
--- Versão do servidor: 8.0.27
--- versão do PHP: 8.2.0
+-- Host: 127.0.0.1
+-- Tempo de geração: 30/10/2024 às 04:48
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_alimentacao`
+-- Estrutura para tabela `tb_adicionais`
+--
+
+CREATE TABLE `tb_adicionais` (
+  `cd_adicionais` int(11) NOT NULL,
+  `ano_diagnostico` char(4) DEFAULT NULL,
+  `alimenta_sozinho` bit(1) DEFAULT NULL,
+  `diabetes` bit(1) DEFAULT NULL,
+  `pressao_alta` bit(1) DEFAULT NULL,
+  `colesterol` bit(1) DEFAULT NULL,
+  `usa_medicacao` bit(1) DEFAULT NULL,
+  `controle_pa` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_adicionais`
+--
+
+INSERT INTO `tb_adicionais` (`cd_adicionais`, `ano_diagnostico`, `alimenta_sozinho`, `diabetes`, `pressao_alta`, `colesterol`, `usa_medicacao`, `controle_pa`) VALUES
+(1, '2015', b'1', NULL, b'1', b'0', b'1', b'0'),
+(2, '2016', b'1', b'0', b'1', b'0', b'1', b'0'),
+(3, '2010', b'1', b'1', b'1', b'1', b'1', b'1'),
+(4, '2011', b'1', b'0', b'1', b'0', b'1', b'0'),
+(5, '2003', b'1', b'0', b'1', b'0', b'1', b'0'),
+(6, '1991', b'0', b'0', b'1', b'0', b'1', b'0'),
+(7, '2009', b'1', b'1', b'0', b'0', b'1', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_alimentacao`
 --
 
 CREATE TABLE `tb_alimentacao` (
-  `cd_alimentacao` int NOT NULL,
+  `cd_alimentacao` int(11) NOT NULL,
   `alimentou_hoje` bit(1) DEFAULT NULL,
   `engasgou_alimentacao` bit(1) DEFAULT NULL,
   `bebeu_liquido` bit(1) DEFAULT NULL,
   `engasgou_liquido` bit(1) DEFAULT NULL,
   `ingeriu_acucar` bit(1) DEFAULT NULL,
-  `observacoes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `observacoes` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tb_alimentacao`
+-- Despejando dados para a tabela `tb_alimentacao`
 --
 
 INSERT INTO `tb_alimentacao` (`cd_alimentacao`, `alimentou_hoje`, `engasgou_alimentacao`, `bebeu_liquido`, `engasgou_liquido`, `ingeriu_acucar`, `observacoes`) VALUES
@@ -49,27 +79,27 @@ INSERT INTO `tb_alimentacao` (`cd_alimentacao`, `alimentou_hoje`, `engasgou_alim
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_cuidador`
+-- Estrutura para tabela `tb_cuidador`
 --
 
 CREATE TABLE `tb_cuidador` (
   `cpf_cuidador` char(11) NOT NULL,
-  `nm_cuidador` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `nm_cuidador` varchar(70) NOT NULL,
   `dt_nascimento` date NOT NULL,
-  `nm_email` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `coren` varchar(17) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_telefone` char(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nm_endereco` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_endereco` int NOT NULL,
-  `nm_bairro` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nm_cidade` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `ds_complemento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_cep` char(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `senha` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `nm_email` varchar(100) NOT NULL,
+  `coren` varchar(17) DEFAULT NULL,
+  `nr_telefone` char(11) NOT NULL,
+  `nm_endereco` varchar(60) NOT NULL,
+  `nr_endereco` int(11) NOT NULL,
+  `nm_bairro` varchar(50) NOT NULL,
+  `nm_cidade` varchar(50) NOT NULL,
+  `ds_complemento` varchar(100) NOT NULL,
+  `nr_cep` char(8) NOT NULL,
+  `senha` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tb_cuidador`
+-- Despejando dados para a tabela `tb_cuidador`
 --
 
 INSERT INTO `tb_cuidador` (`cpf_cuidador`, `nm_cuidador`, `dt_nascimento`, `nm_email`, `coren`, `nr_telefone`, `nm_endereco`, `nr_endereco`, `nm_bairro`, `nm_cidade`, `ds_complemento`, `nr_cep`, `senha`) VALUES
@@ -84,61 +114,232 @@ INSERT INTO `tb_cuidador` (`cpf_cuidador`, `nm_cuidador`, `dt_nascimento`, `nm_e
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_paciente`
+-- Estrutura para tabela `tb_exames`
+--
+
+CREATE TABLE `tb_exames` (
+  `cd_pedido` int(11) NOT NULL,
+  `dt_entrada` date NOT NULL,
+  `dt_impressao` date NOT NULL,
+  `nm_medico_solicitante` varchar(70) NOT NULL,
+  `nm_laboratorio` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_exames`
+--
+
+INSERT INTO `tb_exames` (`cd_pedido`, `dt_entrada`, `dt_impressao`, `nm_medico_solicitante`, `nm_laboratorio`) VALUES
+(312, '2003-10-10', '2003-10-10', 'Dr. Emanuel', 'sla cara'),
+(777, '3333-12-10', '2003-10-10', 'Dr. Microondas', 'HMMMM');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_fezes`
+--
+
+CREATE TABLE `tb_fezes` (
+  `cd_fezes` int(11) NOT NULL,
+  `odor` varchar(7) DEFAULT NULL,
+  `coloracao` varchar(12) DEFAULT NULL,
+  `tipo_fezes` varchar(33) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_fezes`
+--
+
+INSERT INTO `tb_fezes` (`cd_fezes`, `odor`, `coloracao`, `tipo_fezes`) VALUES
+(1, 'Forte', 'Preto/Cinza', ''),
+(2, 'Fátido', 'Amarelo', ''),
+(3, 'Normal', 'Normal', ''),
+(4, 'Forte', 'Vermelho', 'Fragmentada com pedaços definidos'),
+(5, 'Forte', 'Normal', 'Líquido'),
+(6, 'Outros', 'Outros', 'Pequenos fragmentos duros'),
+(7, '0', '0', 'Pequenos fragmentos duros'),
+(8, '0', '0', 'Pequenos fragmentos duros'),
+(9, '0', '0', 'Pequenos fragmentos duros'),
+(10, '0', '0', 'Pequenos fragmentos duros'),
+(11, '0', '0', 'Pequenos fragmentos duros'),
+(12, '0', '0', 'Pequenos fragmentos duros');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_higiene`
+--
+
+CREATE TABLE `tb_higiene` (
+  `cd_higiene` int(11) NOT NULL,
+  `tomou_banho` bit(1) DEFAULT NULL,
+  `escovou_dentes` bit(1) DEFAULT NULL,
+  `utilizou_fralda` bit(1) DEFAULT NULL,
+  `observacoes` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_higiene`
+--
+
+INSERT INTO `tb_higiene` (`cd_higiene`, `tomou_banho`, `escovou_dentes`, `utilizou_fralda`, `observacoes`) VALUES
+(1, b'1', b'1', b'0', 'AAAAAAAA'),
+(2, b'1', b'0', b'1', 'BBBBBBBBBBBB'),
+(3, b'1', b'1', b'1', 'iiiiiiii'),
+(10, b'0', b'0', b'1', ''),
+(11, b'1', b'0', b'1', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_paciente`
 --
 
 CREATE TABLE `tb_paciente` (
   `cpf_paciente` char(11) NOT NULL,
-  `nm_paciente` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_sus` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `nm_paciente` varchar(70) NOT NULL,
+  `nr_sus` varchar(15) NOT NULL,
   `dt_nascimento` date NOT NULL,
-  `nr_telefone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `nm_endereco` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_endereco` int NOT NULL,
-  `nm_bairro` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nm_cidade` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `ds_complemento` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nr_cep` char(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `nr_telefone` varchar(11) DEFAULT NULL,
+  `nm_endereco` varchar(60) NOT NULL,
+  `nr_endereco` int(11) NOT NULL,
+  `nm_bairro` varchar(50) NOT NULL,
+  `nm_cidade` varchar(50) NOT NULL,
+  `ds_complemento` varchar(100) NOT NULL,
+  `nr_cep` char(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tb_paciente`
+-- Despejando dados para a tabela `tb_paciente`
 --
 
 INSERT INTO `tb_paciente` (`cpf_paciente`, `nm_paciente`, `nr_sus`, `dt_nascimento`, `nr_telefone`, `nm_endereco`, `nr_endereco`, `nm_bairro`, `nm_cidade`, `ds_complemento`, `nr_cep`) VALUES
 ('77777777777', 'dwadw', '777777777777777', '2003-10-10', NULL, 'dadawd', 777, 'dwadwd', 'dwadawd', 'dwadawd', '77777777');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_urina`
+--
+
+CREATE TABLE `tb_urina` (
+  `cd_urina` int(11) NOT NULL,
+  `coloracao` varchar(22) DEFAULT NULL,
+  `odor` varchar(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_urina`
+--
+
+INSERT INTO `tb_urina` (`cd_urina`, `coloracao`, `odor`) VALUES
+(2, 'Preto/Cinza', 'Forte'),
+(3, 'Preto/Cinza', 'Forte'),
+(4, 'Preto/Cinza', 'Forte'),
+(5, 'Vermelho', 'Forte'),
+(6, 'Vermelho', 'Forte'),
+(7, 'Transp', 'Normal'),
+(8, 'Outros', 'Outros'),
+(9, 'Transp', 'Normal'),
+(10, 'Outros', 'Outros'),
+(11, '0', '0'),
+(12, '0', '0'),
+(13, '0', '0'),
+(14, '0', '0'),
+(15, '0', '0'),
+(16, '0', '0');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `tb_alimentacao`
+-- Índices de tabela `tb_adicionais`
+--
+ALTER TABLE `tb_adicionais`
+  ADD PRIMARY KEY (`cd_adicionais`);
+
+--
+-- Índices de tabela `tb_alimentacao`
 --
 ALTER TABLE `tb_alimentacao`
   ADD PRIMARY KEY (`cd_alimentacao`);
 
 --
--- Índices para tabela `tb_cuidador`
+-- Índices de tabela `tb_cuidador`
 --
 ALTER TABLE `tb_cuidador`
   ADD PRIMARY KEY (`cpf_cuidador`);
 
 --
--- Índices para tabela `tb_paciente`
+-- Índices de tabela `tb_exames`
+--
+ALTER TABLE `tb_exames`
+  ADD PRIMARY KEY (`cd_pedido`);
+
+--
+-- Índices de tabela `tb_fezes`
+--
+ALTER TABLE `tb_fezes`
+  ADD PRIMARY KEY (`cd_fezes`);
+
+--
+-- Índices de tabela `tb_higiene`
+--
+ALTER TABLE `tb_higiene`
+  ADD PRIMARY KEY (`cd_higiene`);
+
+--
+-- Índices de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
   ADD PRIMARY KEY (`cpf_paciente`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- Índices de tabela `tb_urina`
 --
+ALTER TABLE `tb_urina`
+  ADD PRIMARY KEY (`cd_urina`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tb_adicionais`
+--
+ALTER TABLE `tb_adicionais`
+  MODIFY `cd_adicionais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tb_alimentacao`
 --
 ALTER TABLE `tb_alimentacao`
-  MODIFY `cd_alimentacao` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cd_alimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `tb_exames`
+--
+ALTER TABLE `tb_exames`
+  MODIFY `cd_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
+
+--
+-- AUTO_INCREMENT de tabela `tb_fezes`
+--
+ALTER TABLE `tb_fezes`
+  MODIFY `cd_fezes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `tb_higiene`
+--
+ALTER TABLE `tb_higiene`
+  MODIFY `cd_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `tb_urina`
+--
+ALTER TABLE `tb_urina`
+  MODIFY `cd_urina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

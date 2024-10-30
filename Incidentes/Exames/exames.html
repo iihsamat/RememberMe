@@ -16,21 +16,21 @@
       <h1>EXAMES</h1>
     </header>
     
-    <form class="exam-form">
-      <input type="text" id="pedido" placeholder="Número pedido">
+    <form action="exames.php" method="post" class="exam-form">
+      <input type="text" name="numeroPedido" id="pedido" placeholder="Número pedido">
       
       <div class="input-row">
         <div>
-            <input type="text"  placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="date" name="dataEntrada" placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
          </div>
         <div class="input-sla">
-            <input type="text"  placeholder="Data impressão" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
+            <input type="date" name="dataImpressao" placeholder="Data impressão" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
         </div>
       </div>
 
-      <input type="text" id="medico" placeholder="Médico solicitante">
+      <input type="text" name="medicoSolicitante" id="medico" placeholder="Médico solicitante">
       
-      <input type="text" id="laboratorio" placeholder="Laboratório prestador">
+      <input type="text" name="laboratorio" id="laboratorio" placeholder="Laboratório prestador">
 
       <div class="file-upload">
         <label for="arquivo" class="file-label" placeholder="Anexar Arquivo">
@@ -40,7 +40,7 @@
 
       <div class="button-row">
         <button type="button" class="discard-button">Descartar</button>
-        <button type="button" id="save-button" class="save-button">Salvar</button>
+        <button type="submit" id="save-button" class="save-button">Salvar</button>
       </div>
    </form>
 
