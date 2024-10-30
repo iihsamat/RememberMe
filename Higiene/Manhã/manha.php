@@ -1,16 +1,16 @@
 <?php
 
-    $tomou_banho = $_POST['tomouBanho'];
-    $escovou_dentes = $_POST['escovaDentes'];
-    $utilizou_fralda = $_POST['utilizouFralda'];
+    $tomou_banho = isset($_POST['tomouBanho']) ? $_POST['tomouBanho'] : 0;
+    $escovou_dentes = isset($_POST['escovaDentes']) ? $_POST['escovaDentes'] : 0;
+    $utilizou_fralda =  isset($_POST['utilizouFralda']) ? $_POST['utilizouFralda'] : 0;
     $observacoes = $_POST['Obs'];
 
-    $tipo_fezes = $_POST['tipoFezes'];
-    $odor_fezes = $_POST['odorFezes'];
-    $coloracao_fezes = $_POST['coloracaoFezes'];
+    $tipo_fezes = isset($_POST['tipoFezes']) ? $_POST['tipoFezes'] : 0;
+    $odor_fezes = isset($_POST['odorFezes']) ?  $_POST['odorFezes'] : 0;
+    $coloracao_fezes = isset($_POST['coloracaoFezes']) ? $_POST['coloracaoFezes'] : 0;
 
-    $odor_urina = $_POST['odorUrina'];
-    $coloracao_urina = $_POST['coloracaoUrina'];
+    $odor_urina = isset($_POST['odorUrina']) ?  $_POST['odorUrina'] : 0;
+    $coloracao_urina = isset($_POST['coloracaoUrina']) ? $_POST['coloracaoUrina'] : 0;
 
     include '../../Cadastro/ConexaoBanco.php';
 
@@ -19,7 +19,7 @@
     }
 
     $sql = "INSERT INTO tb_higiene (tomou_banho, escovou_dentes, utilizou_fralda, observacoes)
-            VALUES ('$tomou_banho','$escovou_dentes', '$utilizou_fralda', '$observacoes')";
+            VALUES ($tomou_banho,$escovou_dentes, $utilizou_fralda, '$observacoes')";
             mysqli_query($conexao, $sql);
 
     $sql = "INSERT INTO tb_fezes (tipo_fezes, odor, coloracao)

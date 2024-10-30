@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/10/2024 às 20:07
+-- Tempo de geração: 30/10/2024 às 04:48
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -46,7 +46,10 @@ INSERT INTO `tb_adicionais` (`cd_adicionais`, `ano_diagnostico`, `alimenta_sozin
 (1, '2015', b'1', NULL, b'1', b'0', b'1', b'0'),
 (2, '2016', b'1', b'0', b'1', b'0', b'1', b'0'),
 (3, '2010', b'1', b'1', b'1', b'1', b'1', b'1'),
-(4, '2011', b'1', b'0', b'1', b'0', b'1', b'0');
+(4, '2011', b'1', b'0', b'1', b'0', b'1', b'0'),
+(5, '2003', b'1', b'0', b'1', b'0', b'1', b'0'),
+(6, '1991', b'0', b'0', b'1', b'0', b'1', b'0'),
+(7, '2009', b'1', b'1', b'0', b'0', b'1', b'1');
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,7 @@ CREATE TABLE `tb_cuidador` (
   `nm_cuidador` varchar(70) NOT NULL,
   `dt_nascimento` date NOT NULL,
   `nm_email` varchar(100) NOT NULL,
-  `coren` varchar(17) NOT NULL,
+  `coren` varchar(17) DEFAULT NULL,
   `nr_telefone` char(11) NOT NULL,
   `nm_endereco` varchar(60) NOT NULL,
   `nr_endereco` int(11) NOT NULL,
@@ -127,7 +130,8 @@ CREATE TABLE `tb_exames` (
 --
 
 INSERT INTO `tb_exames` (`cd_pedido`, `dt_entrada`, `dt_impressao`, `nm_medico_solicitante`, `nm_laboratorio`) VALUES
-(312, '2003-10-10', '2003-10-10', 'Dr. Emanuel', 'sla cara');
+(312, '2003-10-10', '2003-10-10', 'Dr. Emanuel', 'sla cara'),
+(777, '3333-12-10', '2003-10-10', 'Dr. Microondas', 'HMMMM');
 
 -- --------------------------------------------------------
 
@@ -137,9 +141,9 @@ INSERT INTO `tb_exames` (`cd_pedido`, `dt_entrada`, `dt_impressao`, `nm_medico_s
 
 CREATE TABLE `tb_fezes` (
   `cd_fezes` int(11) NOT NULL,
-  `odor` varchar(7) NOT NULL,
-  `coloracao` varchar(12) NOT NULL,
-  `tipo_fezes` varchar(33) NOT NULL
+  `odor` varchar(7) DEFAULT NULL,
+  `coloracao` varchar(12) DEFAULT NULL,
+  `tipo_fezes` varchar(33) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -150,7 +154,15 @@ INSERT INTO `tb_fezes` (`cd_fezes`, `odor`, `coloracao`, `tipo_fezes`) VALUES
 (1, 'Forte', 'Preto/Cinza', ''),
 (2, 'Fátido', 'Amarelo', ''),
 (3, 'Normal', 'Normal', ''),
-(4, 'Forte', 'Vermelho', 'Fragmentada com pedaços definidos');
+(4, 'Forte', 'Vermelho', 'Fragmentada com pedaços definidos'),
+(5, 'Forte', 'Normal', 'Líquido'),
+(6, 'Outros', 'Outros', 'Pequenos fragmentos duros'),
+(7, '0', '0', 'Pequenos fragmentos duros'),
+(8, '0', '0', 'Pequenos fragmentos duros'),
+(9, '0', '0', 'Pequenos fragmentos duros'),
+(10, '0', '0', 'Pequenos fragmentos duros'),
+(11, '0', '0', 'Pequenos fragmentos duros'),
+(12, '0', '0', 'Pequenos fragmentos duros');
 
 -- --------------------------------------------------------
 
@@ -174,7 +186,8 @@ INSERT INTO `tb_higiene` (`cd_higiene`, `tomou_banho`, `escovou_dentes`, `utiliz
 (1, b'1', b'1', b'0', 'AAAAAAAA'),
 (2, b'1', b'0', b'1', 'BBBBBBBBBBBB'),
 (3, b'1', b'1', b'1', 'iiiiiiii'),
-(4, b'1', b'1', b'1', 'dawdad');
+(10, b'0', b'0', b'1', ''),
+(11, b'1', b'0', b'1', '');
 
 -- --------------------------------------------------------
 
@@ -211,8 +224,8 @@ INSERT INTO `tb_paciente` (`cpf_paciente`, `nm_paciente`, `nr_sus`, `dt_nascimen
 
 CREATE TABLE `tb_urina` (
   `cd_urina` int(11) NOT NULL,
-  `coloracao` varchar(22) NOT NULL,
-  `odor` varchar(6) NOT NULL
+  `coloracao` varchar(22) DEFAULT NULL,
+  `odor` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -226,7 +239,15 @@ INSERT INTO `tb_urina` (`cd_urina`, `coloracao`, `odor`) VALUES
 (5, 'Vermelho', 'Forte'),
 (6, 'Vermelho', 'Forte'),
 (7, 'Transp', 'Normal'),
-(8, 'Outros', 'Outros');
+(8, 'Outros', 'Outros'),
+(9, 'Transp', 'Normal'),
+(10, 'Outros', 'Outros'),
+(11, '0', '0'),
+(12, '0', '0'),
+(13, '0', '0'),
+(14, '0', '0'),
+(15, '0', '0'),
+(16, '0', '0');
 
 --
 -- Índices para tabelas despejadas
@@ -288,7 +309,7 @@ ALTER TABLE `tb_urina`
 -- AUTO_INCREMENT de tabela `tb_adicionais`
 --
 ALTER TABLE `tb_adicionais`
-  MODIFY `cd_adicionais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cd_adicionais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tb_alimentacao`
@@ -300,25 +321,25 @@ ALTER TABLE `tb_alimentacao`
 -- AUTO_INCREMENT de tabela `tb_exames`
 --
 ALTER TABLE `tb_exames`
-  MODIFY `cd_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=313;
+  MODIFY `cd_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
 
 --
 -- AUTO_INCREMENT de tabela `tb_fezes`
 --
 ALTER TABLE `tb_fezes`
-  MODIFY `cd_fezes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cd_fezes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tb_higiene`
 --
 ALTER TABLE `tb_higiene`
-  MODIFY `cd_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cd_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tb_urina`
 --
 ALTER TABLE `tb_urina`
-  MODIFY `cd_urina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cd_urina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

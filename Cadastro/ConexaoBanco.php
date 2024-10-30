@@ -1,9 +1,9 @@
 <?php 
 $servidor = "localhost";
 $user = "root";
-$password = "root";
+$password = '';
 $banco = "bancophp";
 
-$conexao = new mysqli($servidor, $user, $password, $banco);
+$conexao = new mysqli($servidor, $user, '', $banco);
 
 ?>
