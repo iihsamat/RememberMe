@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
- 
-  body {
+}
+
+body {
     background-color: #f5f5f5;
     color: #333;
-  }
- 
-  .container {
-    padding: -1px;
+}
+
+.container {
+    padding: 0; /* Corrigido para 0 em vez de -1px */
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
- 
-  header {
+}
+
+header {
     position: relative;
     display: flex;
     align-items: center;
@@ -27,17 +28,16 @@
     background: linear-gradient(to bottom, #52E3DB, #58AAD9);
     padding: 50px 0;
     border-radius: 20px 20px 0 0;
-   
-  }
- 
-  header h1 {
+}
+
+header h1 {
     font-size: 17px;
     color: rgb(37, 35, 35);
     margin-top: -50px;
     margin-left: 20px;
-  }
- 
-  .back-button {
+}
+
+.back-button {
     position: absolute;
     left: 25px;
     background: none;
@@ -46,14 +46,14 @@
     color: black;
     cursor: pointer;
     margin-top: -50px;
-  }
- 
-  .profile-section {
+}
+
+.profile-section {
     margin-top: 20px;
     text-align: center;
-  }
- 
-  .avatar {
+}
+
+.avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -63,54 +63,54 @@
     position: relative;
     margin-top: -65px;
     border: 4px solid white;
-  }
- 
-  .avatar img {
+}
+
+.avatar img {
     width: 100%;
     height: 100%;
-  }
- 
-  .profile-name {
+}
+
+.profile-name {
     font-size: 17px;
     margin-top: 10px;
     font-family: 'Archivo Black', sans-serif;
-  }
-  
-  .treatment-section p{
+}
+
+.treatment-section p {
     font-family: 'Archivo Black', sans-serif;
-  }
- 
-  .treatment-section {
+}
+
+.treatment-section {
     margin-top: 80px;
     padding: 15px;
     width: 90%;
-    border: 2px dashed rgb(109 93 93);
+    border: 2px dashed rgb(109, 93, 93);
     border-radius: 25px;
     text-align: center;
-  }
- 
-  .empty-message {
+}
+
+.empty-message {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
- 
-  .plus-icon {
+}
+
+.plus-icon {
     font-size: 30px;
     border: 2px solid rgb(109 93 93);
     border-radius: 50%;
     padding: 7px 15px;
     color: rgb(109 93 93);
     margin-bottom: 10px;
-  }
- 
-  .empty-message p {
+}
+
+.empty-message p {
     font-size: 16px;
     margin-bottom: 20px;
     color: #555;
-  }
- 
-  .add-button {
+}
+
+.add-button {
     background: linear-gradient(to bottom, #52E3DB, #58AAD9);
     color: white;
     padding: 10px 25px;
@@ -119,9 +119,64 @@
     cursor: pointer;
     font-family: "Archivo Black", sans-serif;
     font-size: 20px;
-    
 }
 
-  .add-button:hover {
+.add-button:hover {
     background-color: #009fdf;
-  }
+}
+
+/* Estilos para a tela de Inserir tratamento */
+h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"] {
+    background-color: #F6F6F6;
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    border: 1px solid #D4D4D4;
+    border-radius: 8px;
+}
+
+.next-button {
+    background: linear-gradient(to bottom, #52E3DB, #58AAD9);
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%; /* Ajusta para ocupar 100% da largura */
+    font-size: 24px;
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.next-button:hover {
+    background-color: #009fdf;
+}
+
+#medicamento-list {
+    list-style-type: none;
+    padding: 0; /* Remove a margem padrão */
+    margin-top: 10px; /* Espaço acima da lista */
+}
+
+#medicamento-list li {
+    padding: 10px;
+    border: 1px solid #ccc; /* Adiciona borda aos itens */
+    border-radius: 5px; /* Borda arredondada */
+    margin-bottom: 5px; /* Espaço entre os itens */
+    cursor: pointer; /* Muda o cursor ao passar sobre */
+}
+
+#medicamento-list li:hover {
+    background-color: #f0f0f0; /* Destaque ao passar o mouse */
+}
