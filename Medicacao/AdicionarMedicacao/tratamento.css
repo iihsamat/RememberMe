@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: 'Archivo Black', sans-serif;
+    background: linear-gradient(to bottom, #52E3DB, #58AAD9);
+    padding: 30px 0;
+    border-radius: 20px 20px 0 0;
+    color: rgb(37, 35, 35);
+}
+
+.header h1 {
+    font-size: 20px;
+    color: rgb(37, 35, 35);
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+.back-button {
+    position: absolute;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    top: 15px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.tab {
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Archivo Black', sans-serif;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+    opacity: 0.6;
+}
+
+.tab.active {
+    color: black;
+    opacity: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page {
+    display: none;
+    padding: 20px;
+    width: 100%;
+}
+
+.page.active {
+    display: block;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="time"] {
+    background-color: #F6F6F6;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #D4D4D4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover,
+input[type="time"]:hover,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="time"]:focus {
+    border-color: #58AAD9;
+    box-shadow: 0 4px 8px rgba(0, 88, 175, 0.2);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #58AAD9;
+    border-radius: 4px;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #58AAD9;
+    border-color: #58AAD9;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #009fdf;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo dos botões de incremento e decremento de dose */
+.dose-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dose-controls input[type="number"] {
+    text-align: center;
+    width: 50px;
+    font-size: 16px;
+    border: 1px solid #D4D4D4;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.dose-button {
+    background-color: #58AAD9;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dose-button:hover {
+    background-color: #52A9DB;
+}
+
+#horasDiasField,
+#horasDoDiaField {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #D4D4D4;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#horasDiasField label,
+#horasDoDiaField label {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+}
+
+#horasDoDiaField input[type="time"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Estilo para os dias da semana */
+.dias-semana {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dias-semana label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo para a tela de sugestões, ocupando quase toda a tela, mas com uma margem superior */
+.sugestoes-tela-cheia {
+    position: fixed;
+    top: 10%; /* Deixa 10% da parte superior visível */
+    left: 0;
+    width: 100%;
+    height: 90%; /* Ocupa 90% da altura da tela */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar a tela */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.sugestoes-container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.lista-sugestoes {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.lista-sugestoes li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.lista-sugestoes li:hover {
+    background-color: #f0f0f0;
+}
+
+.salvar-item {
+    font-weight: bold;
+    color: #58AAD9;
+}
+
+.save-button, .cancel-button {
+    background-color: #58AAD9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cancel-button {
+    background-color: #d9534f;
+}
+
+.save-button:hover {
+    background-color: #52A9DB;
+}
+
+.cancel-button:hover {
+    background-color: #c9302c;
+}

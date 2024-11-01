@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Tratamento</title>
+    <link rel="stylesheet" href="tratamento.css">
+    <script src="tratamento.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/HomePage/homepage.html">
+                <button class="back-button">&larr;</button>
+            </a>
+            <h1>Inserir Tratamento</h1>
+            <div class="tabs">
+                <button class="tab active" id="tab-medicamento" onclick="showPage('medicamento')">Medicamento</button>
+                <button class="tab" id="tab-dose" onclick="showPage('dose')">Dose</button>
+                <button class="tab" id="tab-duracao" onclick="showPage('duracao')">Duração</button>
+            </div>
+        </header>
+
+        <section id="page-medicamento" class="page active">
+            <h2>Medicamento</h2>
+            <p>Você encontrará todas as informações sobre o medicamento na caixa ou na bula.</p>
+            <label for="medicamento-nome">Nome do medicamento</label>
+            <input type="text" id="medicamento-nome" placeholder="Ibuprofeno, comprimido verde..." onclick="abrirTelaSugestoes()">
+        </section>
+        
+        <!-- Tela de sugestões em tela cheia -->
+        <div id="tela-sugestoes" class="sugestoes-tela-cheia" style="display: none;">
+            <div class="sugestoes-container">
+                <h3>Selecionar Medicamento</h3>
+                <input type="text" id="input-sugestoes" placeholder="Digite o nome do medicamento..." oninput="filtrarMedicamentos()" autofocus>
+                
+                <ul id="lista-sugestoes" class="lista-sugestoes">
+                    <!-- Sugestões dinâmicas aparecerão aqui -->
+                </ul>
+                
+                <!-- Botão para salvar com o nome digitado -->
+                <button onclick="salvarNomePersonalizado()" class="save-button">Salvar com este nome</button>
+                <button onclick="fecharTelaSugestoes()" class="cancel-button">Cancelar</button>
+            </div>
+        </div>        
+
+        <section id="page-dose" class="page">
+            <h2>Dose</h2>
+            <p>Qual a dose que deve ser administrada ao usuário em cada dia?</p>
+            <label><input type="checkbox"> Dose variável</label>
+            <div class="dose-controls">
+                <button type="button" class="dose-button decrease">-</button>
+                <input type="number" id="dose" min="0" step="1" value="0">
+                <button type="button" class="dose-button increase">+</button>
+            </div>
+            <h3>Intervalo</h3>
+            <p>Com que frequência ou em que horário o usuário deve receber a dose?</p>
+            <label><input type="radio" name="interval" onclick="toggleIntervalFields('horasDias')"> Horas/dias</label>
+            <label><input type="radio" name="interval" onclick="toggleIntervalFields('horasDoDia')"> Horas do dia</label>
+
+            <!-- Campos para Horas/dias -->
+            <div id="horasDiasField" style="display: none;">
+                <label>A cada quantas horas?</label>
+                <input type="number" placeholder="Ex: 8">
+                <label>Hora da primeira alimentação</label>
+                <input type="time" placeholder="Ex: 21:00">
+            </div>
+
+            <!-- Campos para Horas do dia -->
+            <div id="horasDoDiaField" style="display: none;">
+                <label>Dias da Semana</label>
+                <div class="dias-semana">
+                    <label><input type="checkbox"> Dom</label>
+                    <label><input type="checkbox"> Seg</label>
+                    <label><input type="checkbox"> Ter</label>
+                    <label><input type="checkbox"> Qua</label>
+                    <label><input type="checkbox"> Qui</label>
+                    <label><input type="checkbox"> Sex</label>
+                    <label><input type="checkbox"> Sab</label>
+                </div>
+                <label><input type="checkbox"> Café da manhã</label>
+                <input type="time" value="08:30">
+                <label><input type="checkbox"> Almoço</label>
+                <input type="time" value="13:00">
+                <label><input type="checkbox"> Lanche</label>
+                <input type="time" value="17:00">
+                <label><input type="checkbox"> Jantar</label>
+                <input type="time" value="20:30">
+            </div>
+        </section>
+
+        <section id="page-duracao" class="page">
+            <h2>Duração</h2>
+            <label for="inicio-tratamento">Início do tratamento</label>
+            <input type="date" id="inicio-tratamento">
+            <label for="fim-tratamento">Fim do tratamento</label>
+            <input type="date" id="fim-tratamento">
+            <label><input type="checkbox"> Tratamento crônico</label>
+            <br>
+            <a href="/HomePage/homepage.html">
+            <button type="button" id="save-button" class="save-button">Salvar</button>
+            </a>
+        </section>
+
+   
+    </div>
+</body>
+</html>

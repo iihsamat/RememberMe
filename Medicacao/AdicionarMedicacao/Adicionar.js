@@ -1,34 +1,3 @@
-document.querySelector('.add-button').addEventListener('click', () => {
-  // Mudar o conteúdo da página
-  document.body.innerHTML = `
-      <div class="container">
-          <header>
-              <button class="close-button" onclick="voltarParaAdicionar()">✕</button>
-              <h1>Inserir tratamento</h1>
-          </header>
-          
-          <div class="tabs">
-              <button class="tab active">Medicamento</button>&nbsp;&nbsp;&nbsp;
-              <button class="tab disabled">Dose</button>&nbsp;&nbsp;
-              <button class="tab disabled">Duração</button>
-          </div>
-          
-          <div class="form-section">
-              <h2>Medicamento</h2>
-              <p>Você encontrará todas as informações sobre o medicamento na caixa ou na bula.</p>
-              
-              <label for="medicamento">Nome do medicamento</label>
-              <input type="text" id="medicamento" placeholder="Ibruprofeno, comprimido verde...">
-              <ul id="medicamento-list" style="list-style-type: none;"></ul>
-              <button class="next-button">Seguindo</button>
-          </div>
-      </div>
-  `;
-
-  // Adiciona o evento para o campo de medicamento
-  document.getElementById('medicamento').addEventListener('input', buscarMedicamento);
-});
-
 document.getElementById('medicamento').addEventListener('input', buscarMedicamento);
 
 function buscarMedicamento() {
