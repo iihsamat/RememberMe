@@ -40,3 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tratamentoCheckbox = document.getElementById('tratamento-cronico');
+    const fimTratamentoInput = document.getElementById('fim-tratamento');
+
+    // Função para mostrar ou esconder o campo de "Fim do tratamento"
+    function toggleFimTratamentoField() {
+        if (tratamentoCheckbox.checked) {
+            fimTratamentoInput.style.display = 'none';  // Esconde o campo de "Fim do tratamento"
+        } else {
+            fimTratamentoInput.style.display = 'block';  // Exibe o campo de "Fim do tratamento"
+        }
+    }
+
+    // Inicializa o estado do campo "Fim do tratamento" ao carregar a página
+    toggleFimTratamentoField();
+
+    // Adiciona o evento de mudança para a checkbox
+    tratamentoCheckbox.addEventListener('change', toggleFimTratamentoField);
+});
