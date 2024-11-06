@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+ 
+body {
+    background-color: #d3eaf2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.container {
+    background-color: #ffffff;
+    width: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+ 
+header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f3f7fa;
+    justify-content: space-between;
+}
+ 
+header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+ 
+.back-button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+ 
+.goal-setting {
+    text-align: center;
+    padding: 20px;
+}
+ 
+.goal-setting p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+ 
+.water-goal {
+    background-color: #f7f9fb;
+    padding: 30px;
+    border-radius: 15px;
+    max-height: 100px; /* Limite de altura */
+    overflow-y: auto; /* Rolagem vertical */
+}
+ 
+.water-goal .small-value {
+    font-size: 24px;
+    color: #ccc;
+    display: block;
+}
+ 
+.water-goal .main-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+ 
+.reminder-setting {
+    padding: 20px;
+    background-color: #ffffff;
+}
+ 
+.reminder-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+ 
+.reminder-toggle input {
+    display: none;
+}
+ 
+.toggle-slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+ 
+.reminder-toggle input:checked + .toggle-slider {
+    background-color: #00a5e0;
+}
+ 
+.reminder-toggle input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+ 
+.days {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+ 
+.days label {
+    cursor: pointer;
+    color: #333;
+}
+ 
+.days input {
+    display: none;
+}
+ 
+.days label input:checked + label {
+    font-weight: bold;
+    color: #00a5e0;
+}
+ 
+.reminder-time, .reminder-interval {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    font-size: 14px;
+}
+ 
+.reminder-time input,
+.reminder-interval select {
+    border: none;
+    background-color: #f7f9fb;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+ 
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: linear-gradient(to right, #00bfa5, #00a5e0);
+}
+ 
+.nav-item {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
