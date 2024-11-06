@@ -46,7 +46,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 23px;
 }
 
 input[type="checkbox"] {
@@ -62,6 +62,7 @@ select {
 }
 
 .observacoes {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #33333311;
     width: 100%;
     height: 80px;
