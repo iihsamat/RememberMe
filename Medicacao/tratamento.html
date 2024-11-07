@@ -23,28 +23,28 @@
 
         <section id="page-medicamento" class="page active">
             <h2>Medicamento</h2>
-
             <p>Você encontrará todas as informações sobre o medicamento na caixa ou na bula.</p>
-            <br>
-            <label for="medicamento-nome">Nome do medicamento</label>
-            <input type="text" id="medicamento-nome" placeholder="Ibuprofeno, comprimido verde..." onclick="abrirTelaSugestoes()">
+            <input type="text" id="medicamento-nome" placeholder="Nome do medicamento" onclick="abrirTelaSugestoes()">
         </section>
         
         <!-- Tela de sugestões em tela cheia -->
-        <div id="tela-sugestoes" class="sugestoes-tela-cheia" style="display: none;">
-            <div class="sugestoes-container">
-                <h3>Selecionar Medicamento</h3>
-                <input type="text" id="input-sugestoes" placeholder="Digite o nome do medicamento..." oninput="filtrarMedicamentos()" autofocus>
-                
-                <ul id="lista-sugestoes" class="lista-sugestoes">
-                    <!-- Sugestões dinâmicas aparecerão aqui -->
-                </ul>
-                
-                <!-- Botão para salvar com o nome digitado -->
-                <button onclick="salvarNomePersonalizado()" class="save-button">Salvar com este nome</button>
-                <button onclick="fecharTelaSugestoes()" class="cancel-button">Cancelar</button>
-            </div>
-        </div>        
+       <!-- Fundo escurecido -->
+<div id="tela-sugestoes-overlay" onclick="fecharTelaSugestoes()"></div>
+<!-- Tela de sugestões em tela cheia -->
+<div id="tela-sugestoes" class="sugestoes-tela-cheia" style="display: none;">
+    <div class="sugestoes-container">
+        <h3>Selecionar Medicamento</h3>
+        <input type="text" id="input-sugestoes" placeholder="Digite o nome do medicamento..." oninput="filtrarMedicamentos()" autofocus>
+        
+        <ul id="lista-sugestoes" class="lista-sugestoes">
+            <!-- Sugestões dinâmicas aparecerão aqui -->
+        </ul>
+        
+        <button onclick="salvarNomePersonalizado()" class="save-button">Salvar com este nome</button>
+        <button onclick="fecharTelaSugestoes()" class="cancel-button">Cancelar</button>
+    </div>
+</div>
+
 
         <section id="page-dose" class="page">
             <h2>Dose</h2>
@@ -107,8 +107,6 @@
                 <button type="button" id="save-button" class="save-button">Salvar</button>
             </a>
         </section>
-
-   
     </div>
 </body>
 </html>
