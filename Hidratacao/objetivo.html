@@ -1,58 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="objetivo.css">
     <title>Definir Objetivo</title>
+    <link rel="stylesheet" href="objetivo.css">
 </head>
 <body>
     <div class="container">
         <header>
             <button class="back-button">&larr;</button>
             <h1>Definir objetivo</h1>
+          
         </header>
- 
-        <section class="goal-setting">
-            <p>Defina uma meta de ingestão de água diária.</p>
-            <div class="water-goal">
-                <span class="small-value">2.950</span>
-                <span class="main-value">3.000</span>
-                <span class="small-value">3.050</span>
+        <p>Defina uma meta de ingestão de água diária.</p>
+        <section class="water-tracker">
+        <section class="water-intake">
+            <h2>Ingestão diária de água (ml)</h2>
+            <div class="carousel">
+                <button id="upButton">▲</button>
+                <div id="carouselDisplay" class="display">3000</div>
+                <button id="downButton">▼</button>
             </div>
         </section>
- 
-        <section class="reminder-setting">
-            <label class="reminder-toggle">
-                Receber lembretes p/ beber água
+    </section>
+        
+        <section class="reminders">
+            <label class="switch">
+                <span>Receber lembretes p/ beber água</span>
                 <input type="checkbox">
-                <span class="toggle-slider"></span>
+                <span class="slider"></span>
             </label>
+            
             <div class="days">
-                <label><input type="checkbox"> D</label>
-                <label><input type="checkbox"> S</label>
-                <label><input type="checkbox"> T</label>
-                <label><input type="checkbox"> Q</label>
-                <label><input type="checkbox"> Q</label>
-                <label><input type="checkbox"> S</label>
-                <label><input type="checkbox"> S</label>
+                <span class="day" data-day="D">D</span>
+                <span class="day" data-day="S">S</span>
+                <span class="day" data-day="T">T</span>
+                <span class="day" data-day="Q">Q</span>
+                <span class="day" data-day="Q2">Q</span>
+                <span class="day" data-day="S2">S</span>
+                <span class="day" data-day="S3">S</span>
             </div>
-            <div class="reminder-time">
+            
+            <div class="time" id="timePicker">
                 <p>Horário</p>
-                <input type="time" value="08:00"> - <input type="time" value="23:00">
+                <input type="time" id="startTime" value="08:00"> - <input type="time" id="endTime" value="23:00">
             </div>
-            <div class="reminder-interval">
+            
+            <div class="frequency" id="frequencyPicker">
                 <p>Lembrar-me a cada</p>
-                <select>
-                    <option>1 hora</option>
-                    <option selected>2 horas</option>
-                    <option>3 horas</option>
-                    <option>4 horas</option>
-                </select>
+                <input type="time" id="frequencyTime" value="02:00">
             </div>
         </section>
- 
-
     </div>
+ 
+    <script src="objetivo.js"></script>
 </body>
 </html>
