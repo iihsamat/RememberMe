@@ -16,15 +16,15 @@
             <h1>ROTINA</h1>
         </header>
 
-        <form class="hygiene-form">
+        <form action="tarde.php" method="post" class="hygiene-form">
             <ul>
                 <li>
                     <label for="banho">Tomou banho sozinho?</label>
-                    <input type="checkbox" id="banho">
+                    <input type="checkbox" value="1" name="tomouBanho" id="banho">
                 </li>
                 <li>
                     <label for="dentes">Escovou os dentes?</label>
-                    <input type="checkbox" id="dentes">
+                    <input type="checkbox" value="1" name="escovaDentes" id="dentes">
                 </li>
 
                 <li>
@@ -45,35 +45,35 @@
 
 
                     <label for="fezes-select">Selecione o tipo</label>
-                    <select id="fezes-select">
-                        <option value="1">Tipo 1</option>
-                        <option value="2">Tipo 2</option>
-                        <option value="3">Tipo 3</option>
-                        <option value="4">Tipo 4</option>
-                        <option value="5">Tipo 5</option>
-                        <option value="6">Tipo 6</option>
-                        <option value="7">Tipo 7</option>
+                    <select name="tipoFezes" id="fezes-select">
+                        <option name="tipoFezes" value="Pequenos fragmentos duros">Tipo 1</option>
+                        <option name="tipoFezes" value="Em forma cilíndrica com grumos">Tipo 2</option>
+                        <option name="tipoFezes" value="Em forma cilíndrica com fissuras">Tipo 3</option>
+                        <option name="tipoFezes" value="Em forma cilíndrica, fina e suave">Tipo 4</option>
+                        <option name="tipoFezes" value="Fragmentada com pedaços definidos">Tipo 5</option>
+                        <option name="tipoFezes" value="Em pedaços esfarrapados">Tipo 6</option>
+                        <option name="tipoFezes" value="Líquido">Tipo 7</option>
                     </select>
 
                     <div class="odor-section">
                         <div class="section-title">ODOR:</div>
                         <div class="checkbox-group odor-group">
-                            <label><input type="checkbox">Normal</label>
-                            <label><input type="checkbox">Forte</label>
-                            <label><input type="checkbox">Fétido</label>
-                            <label><input type="checkbox">Outros</label>
+                            <label><input name="odorFezes" value="Normal" type="checkbox">Normal</label>
+                            <label><input name="odorFezes" value="Forte" type="checkbox">Forte</label>
+                            <label><input name="odorFezes" value="Fátido" type="checkbox">Fétido</label>
+                            <label><input name="odorFezes" value="Outros" type="checkbox">Outros</label>
                         </div>
                     </div>
 
                     <div class="coloracao-section">
                         <div class="section-title">COLORAÇÃO:</div>
                         <div class="checkbox-group coloracao-group">
-                            <label><input type="checkbox">Normal</label>
-                            <label><input type="checkbox">Verde</label>
-                            <label><input type="checkbox">Amarelo</label>
-                            <label><input type="checkbox">Preto/Cinza</label>
-                            <label><input type="checkbox">Vermelho</label>
-                            <label><input type="checkbox">Outros</label>
+                            <label><input name="coloracaoFezes" value="Normal" type="checkbox">Normal</label>
+                            <label><input name="coloracaoFezes" value="Verde" type="checkbox">Verde</label>
+                            <label><input name="coloracaoFezes" value="Amarelo" type="checkbox">Amarelo</label>
+                            <label><input name="coloracaoFezes" value="Preto/Cinza" type="checkbox">Preto/Cinza</label>
+                            <label><input name="coloracaoFezes" value="Vermelho" type="checkbox">Vermelho</label>
+                            <label><input name="coloracaoFezes" value="Outros" type="checkbox">Outros</label>
                         </div>
                     </div>
                 </div>
@@ -88,33 +88,32 @@
                     <div class="odor-section">
                         <div class="section-title">ODOR:</div>
                         <div class="checkbox-group odor-group">
-                            <label><input type="checkbox">Normal</label>
-                            <label><input type="checkbox">Forte</label>
-                            <label><input type="checkbox">Fétido</label>
-                            <label><input type="checkbox">Outros</label>
+                            <label><input name="odorUrina" value="Normal" type="checkbox">Normal</label>
+                            <label><input name="odorUrina" value="Forte" type="checkbox">Forte</label>
+                            <label><input name="odorUrina" value="Fátido" type="checkbox">Fétido</label>
+                            <label><input name="odorUrina" value="Outros" type="checkbox">Outros</label>
                         </div>
                     </div>
 
                     <div class="coloracao-section">
                         <div class="section-title">COLORAÇÃO:</div>
                         <div class="checkbox-group coloracao-group">
-                            <label><input type="checkbox">Normal</label>
-                            <label><input type="checkbox">Verde</label>
-                            <label><input type="checkbox">Amarelo</label>
-                            <label><input type="checkbox">Transp</label>
-                            <label><input type="checkbox">Vermelho</label>
-                            <label><input type="checkbox">Outros</label>
+                            <label><input name="coloracaoUrina" value="Normal" type="checkbox">Normal</label>
+                            <label><input name="coloracaoUrina" value="Verde" type="checkbox">Verde</label>
+                            <label><input name="coloracaoUrina" value="Amarelo" type="checkbox">Amarelo</label>
+                            <label><input name="coloracaoUrina" value="Transp" type="checkbox">Transp</label>
+                            <label><input name="coloracaoUrina" value="Vermelho" type="checkbox">Vermelho</label>
+                            <label><input name="coloracaoUrina" value="Outros" type="checkbox">Outros</label>
                         </div>
                     </div>
                 </div>
 
                 <li>
                     <label for="fralda">Utilizou fralda?</label>
-                    <input type="checkbox" id="fralda">
+                    <input name="utilizouFralda" value="1" type="checkbox" id="fralda">
                 </li>
             </ul>
-
-            <textarea placeholder="Observações..." class="observacoes"></textarea>
+            <textarea name="Obs" placeholder="Observações..." class="observacoes"></textarea>
 
             <div class="button-row">
                 <button type="button" class="discard-button">Descartar</button>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/10/2024 às 04:48
+-- Tempo de geração: 16/11/2024 às 18:47
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -43,13 +43,7 @@ CREATE TABLE `tb_adicionais` (
 --
 
 INSERT INTO `tb_adicionais` (`cd_adicionais`, `ano_diagnostico`, `alimenta_sozinho`, `diabetes`, `pressao_alta`, `colesterol`, `usa_medicacao`, `controle_pa`) VALUES
-(1, '2015', b'1', NULL, b'1', b'0', b'1', b'0'),
-(2, '2016', b'1', b'0', b'1', b'0', b'1', b'0'),
-(3, '2010', b'1', b'1', b'1', b'1', b'1', b'1'),
-(4, '2011', b'1', b'0', b'1', b'0', b'1', b'0'),
-(5, '2003', b'1', b'0', b'1', b'0', b'1', b'0'),
-(6, '1991', b'0', b'0', b'1', b'0', b'1', b'0'),
-(7, '2009', b'1', b'1', b'0', b'0', b'1', b'1');
+(8, '1985', b'1', b'1', b'0', b'0', b'1', b'0');
 
 -- --------------------------------------------------------
 
@@ -72,9 +66,12 @@ CREATE TABLE `tb_alimentacao` (
 --
 
 INSERT INTO `tb_alimentacao` (`cd_alimentacao`, `alimentou_hoje`, `engasgou_alimentacao`, `bebeu_liquido`, `engasgou_liquido`, `ingeriu_acucar`, `observacoes`) VALUES
-(1, b'1', b'1', b'1', b'1', b'1', ''),
-(2, b'1', b'1', b'1', b'1', b'1', 'dwadawdda'),
-(3, b'1', b'0', b'1', b'0', b'1', 'dwadwdwa');
+(1, b'1', b'0', b'1', b'0', b'1', 'zzzz'),
+(4, b'1', b'0', b'1', b'0', b'1', 'dawdwadawdaw'),
+(5, b'1', b'0', b'1', b'1', b'0', 'aaaaaaaa'),
+(6, b'1', b'1', b'0', b'0', b'1', 'bbbbbbbbbbbb'),
+(7, b'0', b'0', b'1', b'1', b'0', 'cccccccccccccccc'),
+(8, b'1', b'0', b'1', b'0', b'1', 'zzz');
 
 -- --------------------------------------------------------
 
@@ -103,13 +100,7 @@ CREATE TABLE `tb_cuidador` (
 --
 
 INSERT INTO `tb_cuidador` (`cpf_cuidador`, `nm_cuidador`, `dt_nascimento`, `nm_email`, `coren`, `nr_telefone`, `nm_endereco`, `nr_endereco`, `nm_bairro`, `nm_cidade`, `ds_complemento`, `nr_cep`, `senha`) VALUES
-('00000000000', 'aaaaaaaaaaa', '5555-05-05', 'wdada@gmail.com', '132123', '00000000000', 'rua tamagnini', 44, 'vera cruz', 'mongaguá', 'casa', '00000000', '000'),
-('10987654321', 'aaaaaaaaaaa', '2003-10-10', 'wdada@hotmail.com', '4141441', '12345678901', 'rua tamagnini', 121, 'vera cruz', 'mongaguá', 'casa', '11111111', '56789'),
-('11111111111', 'aaaaaaaaaaa', '1111-11-11', 'wdada@gmail.com', '4141441', '1111111', 'rua tamagnini', 111, 'vera cruz', 'mongaguá', 'casa', '11111111', '1111111'),
-('12345678910', 'aaaaaaaaaaa', '2003-10-10', 'wdada@gmail.com', '132123', '12345678910', 'rua tamagnini', 123, 'vera cruz', 'mongaguá', 'casa', '11730000', '123456'),
-('22222222222', 'aaaaaaaaaaa', '2222-02-22', 'wdada@gmail.com', '132123', '2222', 'rua tamagnini', 222, 'vera cruz', 'mongaguá', 'casa', '22222222', '222222'),
-('33333333333', 'aaaaaaaaaaa', '3333-03-31', 'wdada@gmail.com', '132123', '333333', 'rua tamagnini', 333, 'vera cruz', 'mongaguá', 'casa', '33333333', '33333'),
-('77777777777', 'dwad', '2003-09-10', 'dwada@gmail.com', '777777777777', '77777777777', 'dwadwd', 777, 'dwadw', 'dwada', 'ddaddaw', '77777777', '$2y$10$dud6xxE3Uxobf4r70N5wGuySfSEYvijvztBA72JJvWq1Larrzm6Gi');
+('77777777777', 'Gabriel', '2003-10-10', 'gabriel@gmail.com', '7777777777', '77777777777', 'dwadawda', 777, 'dadwada', 'dwadawd', 'dwaawdwa', '77777777', '$2y$10$2ph/44U84ddeq5KqsSRNvu0Tbeu0hvrd1xZrKwl.DcwnQxS7Y5FGS');
 
 -- --------------------------------------------------------
 
@@ -130,8 +121,7 @@ CREATE TABLE `tb_exames` (
 --
 
 INSERT INTO `tb_exames` (`cd_pedido`, `dt_entrada`, `dt_impressao`, `nm_medico_solicitante`, `nm_laboratorio`) VALUES
-(312, '2003-10-10', '2003-10-10', 'Dr. Emanuel', 'sla cara'),
-(777, '3333-12-10', '2003-10-10', 'Dr. Microondas', 'HMMMM');
+(777, '2003-10-10', '2003-10-10', 'Dr. Microondas', 'sla cara');
 
 -- --------------------------------------------------------
 
@@ -151,18 +141,8 @@ CREATE TABLE `tb_fezes` (
 --
 
 INSERT INTO `tb_fezes` (`cd_fezes`, `odor`, `coloracao`, `tipo_fezes`) VALUES
-(1, 'Forte', 'Preto/Cinza', ''),
-(2, 'Fátido', 'Amarelo', ''),
-(3, 'Normal', 'Normal', ''),
-(4, 'Forte', 'Vermelho', 'Fragmentada com pedaços definidos'),
-(5, 'Forte', 'Normal', 'Líquido'),
-(6, 'Outros', 'Outros', 'Pequenos fragmentos duros'),
-(7, '0', '0', 'Pequenos fragmentos duros'),
-(8, '0', '0', 'Pequenos fragmentos duros'),
-(9, '0', '0', 'Pequenos fragmentos duros'),
-(10, '0', '0', 'Pequenos fragmentos duros'),
-(11, '0', '0', 'Pequenos fragmentos duros'),
-(12, '0', '0', 'Pequenos fragmentos duros');
+(13, 'Normal', 'Normal', 'Em pedaços esfarrapados'),
+(14, 'Forte', 'Vermelho', 'Líquido');
 
 -- --------------------------------------------------------
 
@@ -183,11 +163,54 @@ CREATE TABLE `tb_higiene` (
 --
 
 INSERT INTO `tb_higiene` (`cd_higiene`, `tomou_banho`, `escovou_dentes`, `utilizou_fralda`, `observacoes`) VALUES
-(1, b'1', b'1', b'0', 'AAAAAAAA'),
-(2, b'1', b'0', b'1', 'BBBBBBBBBBBB'),
-(3, b'1', b'1', b'1', 'iiiiiiii'),
-(10, b'0', b'0', b'1', ''),
-(11, b'1', b'0', b'1', '');
+(13, b'1', b'1', b'0', 'dwadadd'),
+(14, b'0', b'0', b'1', 'b');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_internacoes`
+--
+
+CREATE TABLE `tb_internacoes` (
+  `cd_internacoes` int(11) NOT NULL,
+  `dt_entrada` date NOT NULL,
+  `dt_saida` date NOT NULL,
+  `nm_medico_solicitante` varchar(70) NOT NULL,
+  `nm_unidade` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_internacoes`
+--
+
+INSERT INTO `tb_internacoes` (`cd_internacoes`, `dt_entrada`, `dt_saida`, `nm_medico_solicitante`, `nm_unidade`) VALUES
+(777, '2003-10-10', '2004-10-10', 'dwada', 'dadadada');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_ocorrencia`
+--
+
+CREATE TABLE `tb_ocorrencia` (
+  `cd_ocorrencia` int(11) NOT NULL,
+  `dt_ocorrencia` date NOT NULL,
+  `precisou_samu` bit(1) DEFAULT NULL,
+  `precisou_hospital` bit(1) DEFAULT NULL,
+  `houve_fratura` bit(1) DEFAULT NULL,
+  `engasgou` bit(1) DEFAULT NULL,
+  `observacoes` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_ocorrencia`
+--
+
+INSERT INTO `tb_ocorrencia` (`cd_ocorrencia`, `dt_ocorrencia`, `precisou_samu`, `precisou_hospital`, `houve_fratura`, `engasgou`, `observacoes`) VALUES
+(1, '0000-00-00', b'1', b'0', b'1', b'0', 'dadwdawdaw'),
+(2, '0000-00-00', b'0', b'1', b'1', b'0', 'sdawdawdaw'),
+(3, '0000-00-00', b'1', b'0', b'1', b'0', 'dwadawdada');
 
 -- --------------------------------------------------------
 
@@ -214,7 +237,7 @@ CREATE TABLE `tb_paciente` (
 --
 
 INSERT INTO `tb_paciente` (`cpf_paciente`, `nm_paciente`, `nr_sus`, `dt_nascimento`, `nr_telefone`, `nm_endereco`, `nr_endereco`, `nm_bairro`, `nm_cidade`, `ds_complemento`, `nr_cep`) VALUES
-('77777777777', 'dwadw', '777777777777777', '2003-10-10', NULL, 'dadawd', 777, 'dwadwd', 'dwadawd', 'dwadawd', '77777777');
+('77777777777', 'aaaaaa', '77777777777', '2003-10-10', NULL, 'dwadwd', 777, 'wadawdawd', 'dwadadaw', 'dwadawdawd', '77777777');
 
 -- --------------------------------------------------------
 
@@ -233,21 +256,8 @@ CREATE TABLE `tb_urina` (
 --
 
 INSERT INTO `tb_urina` (`cd_urina`, `coloracao`, `odor`) VALUES
-(2, 'Preto/Cinza', 'Forte'),
-(3, 'Preto/Cinza', 'Forte'),
-(4, 'Preto/Cinza', 'Forte'),
-(5, 'Vermelho', 'Forte'),
-(6, 'Vermelho', 'Forte'),
-(7, 'Transp', 'Normal'),
-(8, 'Outros', 'Outros'),
-(9, 'Transp', 'Normal'),
-(10, 'Outros', 'Outros'),
-(11, '0', '0'),
-(12, '0', '0'),
-(13, '0', '0'),
-(14, '0', '0'),
-(15, '0', '0'),
-(16, '0', '0');
+(17, 'Amarelo', 'Forte'),
+(18, 'Transp', 'Normal');
 
 --
 -- Índices para tabelas despejadas
@@ -290,6 +300,18 @@ ALTER TABLE `tb_higiene`
   ADD PRIMARY KEY (`cd_higiene`);
 
 --
+-- Índices de tabela `tb_internacoes`
+--
+ALTER TABLE `tb_internacoes`
+  ADD PRIMARY KEY (`cd_internacoes`);
+
+--
+-- Índices de tabela `tb_ocorrencia`
+--
+ALTER TABLE `tb_ocorrencia`
+  ADD PRIMARY KEY (`cd_ocorrencia`);
+
+--
 -- Índices de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
@@ -309,13 +331,13 @@ ALTER TABLE `tb_urina`
 -- AUTO_INCREMENT de tabela `tb_adicionais`
 --
 ALTER TABLE `tb_adicionais`
-  MODIFY `cd_adicionais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cd_adicionais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tb_alimentacao`
 --
 ALTER TABLE `tb_alimentacao`
-  MODIFY `cd_alimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cd_alimentacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tb_exames`
@@ -327,19 +349,31 @@ ALTER TABLE `tb_exames`
 -- AUTO_INCREMENT de tabela `tb_fezes`
 --
 ALTER TABLE `tb_fezes`
-  MODIFY `cd_fezes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cd_fezes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tb_higiene`
 --
 ALTER TABLE `tb_higiene`
-  MODIFY `cd_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cd_higiene` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de tabela `tb_internacoes`
+--
+ALTER TABLE `tb_internacoes`
+  MODIFY `cd_internacoes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
+
+--
+-- AUTO_INCREMENT de tabela `tb_ocorrencia`
+--
+ALTER TABLE `tb_ocorrencia`
+  MODIFY `cd_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_urina`
 --
 ALTER TABLE `tb_urina`
-  MODIFY `cd_urina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cd_urina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

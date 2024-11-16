@@ -16,21 +16,21 @@
       <h1>INTERNAÇÕES</h1>
     </header>
     
-    <form class="exam-form">
-      <input type="text" id="pedido" placeholder="Número da Matricula">
+    <form action="internacoes.php" method="post" class="exam-form">
+      <input type="text" name="numeroMatricula" id="pedido" placeholder="Número da Matricula">
       
       <div class="input-row">
         <div>
-            <input type="text"  placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="text" name="dataEntrada"  placeholder="Entrada" required  onfocus="(this.type='date')" onblur="(this.type='text')">
          </div>
         <div class="input-sla">
-            <input type="text"  placeholder="Saida" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
+            <input type="text" name="dataSaida"  placeholder="Saida" required  onfocus="(this.type='date')" onblur="(this.type='text')"  >
         </div>
       </div>
 
-      <input type="text" id="medico" placeholder="Médico solicitante">
+      <input type="text" id="medico" name="medicoSolicitante" placeholder="Médico solicitante">
       
-      <input type="text" id="unidade" placeholder="Unidade prestadora">
+      <input type="text" id="unidade" name="unidade" placeholder="Unidade prestadora">
 
       <div class="file-upload">
         <label for="arquivo" class="file-label">
@@ -40,7 +40,7 @@
       
      <div class="button-row">
          <button type="button" class="discard-button">Descartar</button>
-         <button type="button" id="save-button" class="save-button">Salvar</button>
+         <button type="submit" id="save-button" class="save-button">Salvar</button>
        </div>
     </form>
 

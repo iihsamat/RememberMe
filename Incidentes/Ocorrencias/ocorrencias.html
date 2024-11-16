@@ -17,34 +17,34 @@
             <h1>Ocorrências</h1>
         </header>
 
-        <form class="oco-form">
+        <form action="ocorrencias.php" method="post" class="oco-form">
             <ul>
                 <li>
                   <label for="data">Data do Diagnostico</label>
-                 <input type="date" id="data" name="data">
+                 <input type="date" name="dataOcorrencia" id="data">
                 </li>
                 <li>
                     <label for="samu">Precisou do SAMU?</label>
-                    <input type="checkbox" id="samu">
+                    <input type="checkbox" value="1" name="precisouSamu" id="samu">
                 </li>
                 <li>
                     <label for="hospital">Precisou ao hospital?</label>
-                    <input type="checkbox" id="hospital">
+                    <input type="checkbox" value="1" name="precisouHospital" id="hospital">
                 </li>
                 <li>
                     <label for="fratura">Houve Fratura?</label>
-                    <input type="checkbox" id="fratura">
+                    <input type="checkbox" value="1" name="houveFratura" id="fratura">
                 </li>
                 <li>
                     <label for="engasgou">Engasgou?</label>
-                    <input type="checkbox" id="engasgou">
+                    <input type="checkbox" value="1" name="engasgou" id="engasgou">
                 </li>
             </ul>
-            <textarea placeholder="Observações..." class="observacoes"></textarea>
+            <textarea name="Obs" placeholder="Observações..." class="observacoes"></textarea>
 
             <div class="button-row">
                 <button type="button" class="discard-button">Descartar</button>
-                <button type="button" id="save-button" class="save-button">Salvar</button>
+                <button type="submit" id="save-button" class="save-button">Salvar</button>
             </div>
         </form>
     </div>
