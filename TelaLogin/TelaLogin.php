@@ -17,9 +17,18 @@ $result2 = mysqli_fetch_array($query2);
 $cpf_cuidador = $result['cpf_cuidador'];
 $cpf_paciente = $result2['cpf_paciente'];
 $senha = $result['senha'];
+$nome_cuidador = $result ['nm_cuidador'];
+$nome_email = $result ['nm_email'];
+$numero_telefone = $result ['nr_telefone'];
+$data_nascimento = $result ['dt_nascimento'];
 
 if($cpfCuidador == $cpf_cuidador && $cpfPaciente == $cpf_paciente && password_verify ($senhaCuidador, $senha)){
-    header('location: ../HomePage/homepage.html');
+    session_start();
+    $_SESSION['username'] = $nome_cuidador;
+    $_SESSION['data'] = $data_nascimento;
+    $_SESSION['email'] = $nome_email;
+    $_SESSION['telefone'] = $numero_telefone;
+    header('location: ../HomePage/homepage.php');
 }
 else{
     echo "<script> alert('Usuário Inválido'); history.back();</script>";

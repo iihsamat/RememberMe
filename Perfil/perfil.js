@@ -32,25 +32,51 @@ function iniciarEdicao() {
 
 function salvarEdicoes() {
 
-    var editNome = document.getElementById('editNome').value;
-    var editData = document.getElementById('editData').value;
-    var editEmail = document.getElementById('editEmail').value;
-    var editTelefone = document.getElementById('editTelefone').value;
-
-
-    document.getElementById('nome').innerHTML = editNome;
-    document.getElementById('data').innerHTML = editData;
-    document.getElementById('email').innerHTML = `✉️ <a href="mailto:${editEmail}">${editEmail}</a>`;
-    document.getElementById('telefone').innerHTML = `📞 ${editTelefone}`;
-
-
-    var editButton = document.querySelector('.editar');
-    editButton.innerHTML = '✏️ Editar';
-
-    var encerrarButton = document.querySelector('.encerrar');
-    encerrarButton.innerHTML = 'Encerrar Turno';
-
-    isEditing = false;
+     // Obtendo os valores dos inputs editados
+     var editNome = document.getElementById('editNome').value;
+     var editData = document.getElementById('editData').value;
+     var editEmail = document.getElementById('editEmail').value;
+     var editTelefone = document.getElementById('editTelefone').value;
+ 
+     // Atualizando os elementos do DOM
+     document.getElementById('nome').innerHTML = editNome;
+     document.getElementById('data').innerHTML = editData;
+     document.getElementById('email').innerHTML = `✉️ ${editEmail}`;
+     document.getElementById('telefone').innerHTML = `📞 ${editTelefone}`;
+ 
+     // Enviar dados para o backend via Fetch API
+     fetch('salvarPerfil.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: editNome,
+            data: editData,
+            email: editEmail,
+            telefone: editTelefone
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message); // Exibe mensagem de sucesso
+            } else {
+                alert('Erro: ' + data.message); // Exibe mensagem de erro
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });    
+ 
+     // Atualizando botões
+     var editButton = document.querySelector('.editar');
+     editButton.innerHTML = 'Editar';
+ 
+     var encerrarButton = document.querySelector('.encerrar');
+     encerrarButton.innerHTML = 'Encerrar Turno';
+ 
+     isEditing = false;
 }
 
 function encerrarTurno() {
@@ -77,7 +103,7 @@ function descartarEdicao() {
 
 
     var editButton = document.querySelector('.editar');
-    editButton.innerHTML = '✏️ Editar';
+    editButton.innerHTML = 'Editar';
 
     var encerrarButton = document.querySelector('.encerrar');
     encerrarButton.innerHTML = 'Encerrar Turno';

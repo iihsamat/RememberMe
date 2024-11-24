@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <a href="../HomePage/homepage.html">
+            <a href="../HomePage/homepage.php">
                 <button class="back-button">&#8592;</button>
             </a>
             <div class="titulo">PERFIL</div>
@@ -21,10 +21,16 @@
                 <span class="add-photo">+</span>
             </div>
             <div class="perfil-info">
-                <h3 id="nome">Cuidador</h3>
-                <p id="data">📅 07/08/2006</p>
-                <p id="email">✉️ <a href="mailto:gicelly.gomes@etec.sp.gov.br">stefeson.almeida@etec.sp.gov.br</a></p>
-                <p id="telefone">📞 (13) 98143-1220</p>
+            <div class="perfil-info">           
+            <?php
+            session_start();
+            ?>
+            <h3 id="nome"><strong></strong> <?php echo $_SESSION['username']; ?></h3>
+            <p id="data"><strong>📅</strong> <?php echo $_SESSION['data']; ?></p>
+            <p id="email"><strong>✉️</strong> <?php echo $_SESSION['email']; ?></p>
+            <p id="telefone"><strong>📞</strong> <?php echo $_SESSION['telefone']; ?></p>
+            </div>
+ 
             </div>
             <div class="actions">
                 <button class="editar" onclick="editarPerfil()"> Editar</button>

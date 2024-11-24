@@ -24,11 +24,17 @@
     <nav id="side-menu" class="side-menu">
         <div class="menu-header">
             <img src="../RememberMe/imgs/profile.png" alt="Cuidador" class="profile-pic">
-            <p>Cuidador</p>
+            <?php
+            session_start();
+            if(isset($_SESSION['username'])){
+              $username = $_SESSION['username'];
+              echo "$username";
+            }
+            ?>
             <button class="close-btn" onclick="toggleMenu()">X</button>
         </div>
         <ul class="menu-options">
-            <li><a href="../HomePage/homepage.html">Página Inicial</a></li>
+            <li><a href="../HomePage/homepage.php">Página Inicial</a></li>
             <li><a href="../Higiene/higiene.html">Higiene</a></li>
             <li><a href="../Medicacao/Adicionar.html">Medicação</a></li>
             <li><a href="../Alimentacao/alimentacao.html">Alimentação</a></li>
@@ -37,7 +43,7 @@
             <li><a href="../Adicionais/adicionais.html">Adicionais</a></li>
         </ul>
         <div class="menu-footer">
-            <a href="../Perfil/perfil.html">Perfil</a>
+            <a href="../Perfil/perfil.php">Perfil</a>
         </div>
     </nav>
 
