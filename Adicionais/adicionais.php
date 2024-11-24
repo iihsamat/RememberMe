@@ -18,7 +18,7 @@
             VALUES ($ano_diagnostico, $alimenta_sozinho, $diabetes, $pressao_alta, $colesterol,$usa_medicacao,$controle_pa)";
 
     if (mysqli_query($conexao, $sql)) {
-        header('location: ../HomePage/homepage.html');
+        header('location: ../HomePage/homepage.php');
     } else {
         echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
     }

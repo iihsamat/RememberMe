@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     confirmYes.addEventListener('click', function() {
 
-        window.location.href = '../HomePage/homepage.html';
+        window.location.href = '../HomePage/homepage.php';
     });
 
 
@@ -48,6 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const saveButton = document.getElementById('save-button');
 
     saveButton.addEventListener('click', function() {
-        window.location.href = '../HomePage/homepage.html';
+        window.location.href = '../HomePage/homepage.php';
     });
 });
