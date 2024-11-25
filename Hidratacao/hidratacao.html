@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hidratacao.css">
+    <script src="hidratacao.js"></script>
     <title>Consumo de Água</title>
 </head>
 <body>
     <div class="container">
         <header>
+            <a href="../HomePage/homepage.php">
             <button class="back-button">&larr;</button>
+            </a>
             <h1>Água</h1>
-            <button class="menu-button">&#8942;</button>
+
+            <button class="menu-button" onclick="toggleMenu()">&#8942;</button>
+            <div class="dropdown-menu" id="menu">
+               <a href="../Hidratacao/objetivo.html">Definir Objetivo</a>
+               <a href="../Hidratacao/tamanho.html">Definir Tamanho do Copo</a>
+            </div>
         </header>
  
         <section class="water-tracker">

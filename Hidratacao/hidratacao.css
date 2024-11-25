@@ -157,3 +157,35 @@ header h1 {
     font-size: 24px;
     cursor: pointer;
 }
+
+.dropdown-menu {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 60px; /* Alinhe com a posição do botão */
+    right: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    z-index: 1000;
+    padding: 5px 0;
+    width: 180px; /* Defina a largura fixa */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Archivo", sans-serif;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    border-radius: 8px; /* Arredondar cantos no hover */
+}
+
+/* Remova as bordas desnecessárias */
+.dropdown-menu a:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}

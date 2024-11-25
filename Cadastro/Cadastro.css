@@ -113,3 +113,38 @@ input, select {
     cursor: pointer;
     font-size: 20px;
 }
+
+.notificacao {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Vermelho escuro */
+    padding: 10px 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    display: none; /* Oculto por padrão */
+    z-index: 1000;
+    animation: fadeInOut 4s forwards; /* Adiciona animação */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.input-container .fas {
+    position: absolute;
+    right: 17px;
+    top: 29px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: #888888;
+    opacity: 1;
+}

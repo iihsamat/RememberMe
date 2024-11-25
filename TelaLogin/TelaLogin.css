@@ -51,6 +51,7 @@ body {
     border: 2px solid #00c4cc;
     border-radius: 10px;
     background-color: #f5faff;
+    font-size: 15px;
 }
 
 .paciente {
@@ -119,7 +120,7 @@ body {
     right: 15px;
     top: 20px;
     transform: translateY(-50%);
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     color: #888888;
     opacity: 1;
