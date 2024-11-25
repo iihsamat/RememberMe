@@ -31,6 +31,6 @@
     } else {
         echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); history.back();</script>";
     }
-
+    
     mysqli_close($conexao);
 ?>
